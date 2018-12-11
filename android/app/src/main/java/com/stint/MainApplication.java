@@ -3,6 +3,13 @@ package com.stint;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.airbnb.android.react.maps.MapsPackage;
+import com.imagepicker.ImagePickerPackage;
+import com.BV.LinearGradient.LinearGradientPackage;
+import com.horcrux.svg.SvgPackage;
+
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
+import com.apsl.versionnumber.RNVersionNumberPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.babisoft.ReactNativeLocalization.ReactNativeLocalizationPackage;
 import com.facebook.react.ReactNativeHost;
@@ -25,6 +32,12 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new MapsPackage(),
+            new ImagePickerPackage(),
+            new LinearGradientPackage(),
+            new SvgPackage(),
+            new SplashScreenReactPackage(),
+            new RNVersionNumberPackage(),
             new VectorIconsPackage(),
             new ReactNativeLocalizationPackage()
       );

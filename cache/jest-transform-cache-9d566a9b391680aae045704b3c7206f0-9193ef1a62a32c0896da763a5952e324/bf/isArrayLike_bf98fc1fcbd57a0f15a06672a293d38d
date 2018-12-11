@@ -1,8 +1,0 @@
-0063c19906634cf47486622dd6035fca
-
-
-function isArrayLike(value) {
-  return value != null && require('./isLength')(value.length) && !require('./isFunction')(value);
-}
-
-module.exports = isArrayLike;

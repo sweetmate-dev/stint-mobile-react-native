@@ -1,17 +1,14 @@
-// @flow
+import React from 'react';
+import { YellowBox } from 'react-native';
+import { Provider } from 'react-redux';
+import AppWithNav from './src/navigation/AppWithNav';
+import store from './src/redux/store'
 
+YellowBox.ignoreWarnings(['Warning: isMounted(...) is deprecated', 'Module RCTImageLoader']);
+console.disableYellowBox = true;
 
-import React, { Component } from 'react';
-
-import RootNavigation from './src/navigation/RootNavigation';
-
-
-type Props = {};
-
-export default class App extends Component<Props> {
+export default class App extends React.Component {
   render() {
-    return (
-        <RootNavigation/>
-    );
+    return <Provider store={store}><AppWithNav /></Provider>;
   }
 }

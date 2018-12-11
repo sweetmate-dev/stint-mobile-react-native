@@ -1,0 +1,10 @@
+3aafa8ea56f1c24c393850c76b456c76
+'use strict';
+
+module.exports = function shimStringTrim() {
+	var polyfill = require('./polyfill')();
+	require('define-properties')(String.prototype, { trim: polyfill }, { trim: function trim() {
+			return String.prototype.trim !== polyfill;
+		} });
+	return polyfill;
+};

@@ -1,0 +1,10 @@
+7f1c2717f0feeecead2edc3129d9a494
+
+
+'use strict';
+
+var PointPropType = require('createStrictShapeTypeChecker')({
+  x: require('prop-types').number,
+  y: require('prop-types').number });
+
+module.exports = PointPropType;

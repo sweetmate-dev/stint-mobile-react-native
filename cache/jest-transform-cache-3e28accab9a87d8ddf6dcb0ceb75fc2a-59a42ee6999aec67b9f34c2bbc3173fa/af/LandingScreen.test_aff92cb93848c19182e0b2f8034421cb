@@ -1,0 +1,14 @@
+f07ffbb072914b86b8c2fa4f59fad82a
+var _jsxFileName = '/Volumes/Work/ReactNative/stint-mobile-app-dev/src/__tests__/Screens/LandingScreen.test.js';
+require('react-native');
+var _react = require('react');var _react2 = babelHelpers.interopRequireDefault(_react);
+var _LandingScreen = require('../../screens/LandingScreen/LandingScreen');var _LandingScreen2 = babelHelpers.interopRequireDefault(_LandingScreen);
+
+var _reactTestRenderer = require('react-test-renderer');var _reactTestRenderer2 = babelHelpers.interopRequireDefault(_reactTestRenderer);
+
+it('renders correctly', function () {
+  var tree = _reactTestRenderer2.default.create(
+  _react2.default.createElement(_LandingScreen2.default, { __source: { fileName: _jsxFileName, lineNumber: 10 } })).
+  toJSON();
+  expect(tree).toMatchSnapshot();
+});

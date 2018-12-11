@@ -1,0 +1,5 @@
+18f573ae9dd2ca754d798850e784ab4c
+Object.defineProperty(exports, "__esModule", { value: true });
+
+var _reactNative = require('react-native');
+var _KeyboardAwareHOC = require('./KeyboardAwareHOC');var _KeyboardAwareHOC2 = babelHelpers.interopRequireDefault(_KeyboardAwareHOC);exports.default = (0, _KeyboardAwareHOC2.default)(_reactNative.ScrollView);

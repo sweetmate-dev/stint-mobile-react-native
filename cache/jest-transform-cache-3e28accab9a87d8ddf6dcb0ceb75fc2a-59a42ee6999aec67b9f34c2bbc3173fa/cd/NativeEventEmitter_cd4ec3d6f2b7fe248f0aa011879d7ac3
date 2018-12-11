@@ -1,0 +1,34 @@
+6b7ee87c3ff25a3803c55c531156e04d
+
+
+'use strict';
+var NativeEventEmitter = function (_EventEmitter) {
+  babelHelpers.inherits(NativeEventEmitter, _EventEmitter);
+
+  function NativeEventEmitter(nativeModule) {
+    babelHelpers.classCallCheck(this, NativeEventEmitter);var _this = babelHelpers.possibleConstructorReturn(this, (NativeEventEmitter.__proto__ || Object.getPrototypeOf(NativeEventEmitter)).call(this, require('RCTDeviceEventEmitter').sharedSubscriber));
+    if (require('Platform').OS === 'ios') {
+      require('fbjs/lib/invariant')(nativeModule, 'Native module cannot be null.');
+      _this._nativeModule = nativeModule;
+    }return _this;
+  }babelHelpers.createClass(NativeEventEmitter, [{ key: 'addListener', value: function addListener(eventType, listener, context) {
+      if (this._nativeModule != null) {
+        this._nativeModule.addListener(eventType);
+      }
+      return babelHelpers.get(NativeEventEmitter.prototype.__proto__ || Object.getPrototypeOf(NativeEventEmitter.prototype), 'addListener', this).call(this, eventType, listener, context);
+    } }, { key: 'removeAllListeners', value: function removeAllListeners(eventType) {
+      require('fbjs/lib/invariant')(eventType, 'eventType argument is required.');
+      var count = this.listeners(eventType).length;
+      if (this._nativeModule != null) {
+        this._nativeModule.removeListeners(count);
+      }
+      babelHelpers.get(NativeEventEmitter.prototype.__proto__ || Object.getPrototypeOf(NativeEventEmitter.prototype), 'removeAllListeners', this).call(this, eventType);
+    } }, { key: 'removeSubscription', value: function removeSubscription(subscription) {
+      if (this._nativeModule != null) {
+        this._nativeModule.removeListeners(1);
+      }
+      babelHelpers.get(NativeEventEmitter.prototype.__proto__ || Object.getPrototypeOf(NativeEventEmitter.prototype), 'removeSubscription', this).call(this, subscription);
+    } }]);return NativeEventEmitter;
+}(require('EventEmitter'));
+
+module.exports = NativeEventEmitter;

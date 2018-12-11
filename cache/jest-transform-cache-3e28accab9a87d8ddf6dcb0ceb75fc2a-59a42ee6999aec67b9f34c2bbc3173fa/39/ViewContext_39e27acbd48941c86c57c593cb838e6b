@@ -1,0 +1,8 @@
+e610cc53837204f7ef5103e8e117b28c
+
+
+'use strict';
+Object.defineProperty(exports, "__esModule", { value: true });
+
+var ViewContextTypes = exports.ViewContextTypes = {
+  isInAParentText: require('prop-types').bool };

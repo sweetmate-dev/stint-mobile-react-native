@@ -1,0 +1,39 @@
+285b716b48889bc16ca63ea277132b15
+
+
+
+
+
+
+
+
+
+
+
+'use strict';var _jsxFileName = '/Volumes/Work/ReactNative/stint-mobile-app-dev/node_modules/react-native/Libraries/Components/ScrollView/__mocks__/ScrollViewMock.js';
+
+
+
+
+
+
+
+
+var RCTScrollView = require('requireNativeComponent')('RCTScrollView');
+
+var ScrollViewComponent = jest.genMockFromModule('ScrollView');var
+
+ScrollViewMock = function (_ScrollViewComponent) {babelHelpers.inherits(ScrollViewMock, _ScrollViewComponent);function ScrollViewMock() {babelHelpers.classCallCheck(this, ScrollViewMock);return babelHelpers.possibleConstructorReturn(this, (ScrollViewMock.__proto__ || Object.getPrototypeOf(ScrollViewMock)).apply(this, arguments));}babelHelpers.createClass(ScrollViewMock, [{ key: 'render', value: function render()
+    {
+      return (
+        require('React').createElement(RCTScrollView, babelHelpers.extends({}, this.props, { __source: { fileName: _jsxFileName, lineNumber: 28 } }),
+          this.props.refreshControl,
+          require('React').createElement(require('View'), { __source: { fileName: _jsxFileName, lineNumber: 30 } },
+            this.props.children)));
+
+
+
+    } }]);return ScrollViewMock;}(ScrollViewComponent);
+
+
+module.exports = ScrollViewMock;

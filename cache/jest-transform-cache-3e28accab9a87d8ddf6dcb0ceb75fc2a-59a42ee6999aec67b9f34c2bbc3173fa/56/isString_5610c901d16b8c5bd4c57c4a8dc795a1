@@ -1,0 +1,10 @@
+348f8aaf570eee65aad6b058caeb90cd
+
+
+var stringTag = '[object String]';
+
+function isString(value) {
+    return typeof value == 'string' || !require('./isArray')(value) && require('./isObjectLike')(value) && require('./_baseGetTag')(value) == stringTag;
+}
+
+module.exports = isString;

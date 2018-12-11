@@ -1,8 +1,0 @@
-b67a06fbd0de5d99040e41c5fdee93a5
-
-
-function getValue(object, key) {
-  return object == null ? undefined : object[key];
-}
-
-module.exports = getValue;

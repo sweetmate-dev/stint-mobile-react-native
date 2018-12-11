@@ -1,0 +1,12 @@
+cc136dc1ecd80e84d1901002bfd4f3bb
+
+
+'use strict';
+
+var BatchedBridge = new (require('MessageQueue'))(typeof __fbUninstallRNGlobalErrorHandler !== 'undefined' && __fbUninstallRNGlobalErrorHandler === true);
+
+Object.defineProperty(global, '__fbBatchedBridge', {
+  configurable: true,
+  value: BatchedBridge });
+
+module.exports = BatchedBridge;

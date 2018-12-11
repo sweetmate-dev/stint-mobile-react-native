@@ -1,0 +1,61 @@
+7f4b677cc42d83e5a108298c3b9144af
+
+
+
+
+
+
+
+
+
+'use strict';var _jsxFileName = '/Volumes/Work/ReactNative/stint-mobile-app-dev/node_modules/react-native/Libraries/Lists/ListView/__mocks__/ListViewMock.js';var
+
+
+
+
+
+
+ListViewMock = function (_React$Component) {babelHelpers.inherits(ListViewMock, _React$Component);function ListViewMock() {babelHelpers.classCallCheck(this, ListViewMock);return babelHelpers.possibleConstructorReturn(this, (ListViewMock.__proto__ || Object.getPrototypeOf(ListViewMock)).apply(this, arguments));}babelHelpers.createClass(ListViewMock, [{ key: 'componentDidMount', value: function componentDidMount()
+
+
+
+
+
+
+
+
+
+    {
+      ListViewMock.latestRef = this;
+    } }, { key: 'render', value: function render()
+    {var _props =
+      this.props,dataSource = _props.dataSource,renderFooter = _props.renderFooter,renderHeader = _props.renderHeader;
+      var rows = [renderHeader && renderHeader()];
+      var allRowIDs = dataSource.rowIdentities;
+      for (var sectionIdx = 0; sectionIdx < allRowIDs.length; sectionIdx++) {
+        var sectionID = dataSource.sectionIdentities[sectionIdx];
+        var rowIDs = allRowIDs[sectionIdx];
+        for (var rowIdx = 0; rowIdx < rowIDs.length; rowIdx++) {
+          var rowID = rowIDs[rowIdx];
+
+          rows.push(
+          require('React').createElement(require('StaticRenderer'), {
+            key: 'section_' + sectionID + '_row_' + rowID,
+            shouldUpdate: true,
+            render: this.props.renderRow.bind(
+            null,
+            dataSource.getRowData(sectionIdx, rowIdx),
+            sectionID,
+            rowID), __source: { fileName: _jsxFileName, lineNumber: 41 } }));
+
+
+
+        }
+      }
+      renderFooter && rows.push(renderFooter());
+      return this.props.renderScrollComponent(babelHelpers.extends({}, this.props, { children: rows }));
+    } }]);return ListViewMock;}(require('React').Component);ListViewMock.defaultProps = { renderScrollComponent: function renderScrollComponent(props) {return require('React').createElement(require('ScrollView'), babelHelpers.extends({}, props, { __source: { fileName: _jsxFileName, lineNumber: 25 } }));} };ListViewMock.
+DataSource = require('ListViewDataSource');
+
+
+module.exports = ListViewMock;

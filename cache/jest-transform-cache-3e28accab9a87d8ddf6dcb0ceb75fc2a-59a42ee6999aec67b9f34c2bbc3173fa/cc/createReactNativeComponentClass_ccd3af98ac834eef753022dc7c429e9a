@@ -1,0 +1,6 @@
+25b43602a581a27f4105cd4e91604b10
+
+
+'use strict';
+
+module.exports = require('ReactNative').__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.createReactNativeComponentClass;

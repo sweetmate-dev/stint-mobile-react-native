@@ -1,37 +1,53 @@
-import { NavigationActions } from 'react-navigation';
+import { NavigationParams, NavigationActions } from 'react-navigation';
 
-let navigator;
+let _container; // eslint-disable-line
 
-function setTopLevelNavigator(navigatorRef) {
-	navigator = navigatorRef;
-}
+const setContainer = (container) => {
+  _container = container;
+};
 
-function navigate(routeName, params) {
-	navigator.dispatch(
-		NavigationActions.navigate({
-			routeName,
-			params,
-		}),
-	);
-}
+const getContainer = () => _container;
 
-function reset(routeName, params) {
-	navigator.dispatch(
-		NavigationActions.reset({
-			index: 0,
-			actions: [
-				NavigationActions.navigate({
-					type: 'Navigation/NAVIGATE',
-					routeName,
-					params,
-				}),
-			],
-		}),
-	);
-}
+const reset = (routeName, params = NavigationParams) => {
+  _container.dispatch(NavigationActions.reset({
+    index: 0,
+    actions: [
+      NavigationActions.navigate({
+        type: 'Navigation/NAVIGATE',
+        routeName,
+        params,
+      }),
+    ],
+  }));
+};
+
+const navigate = (routeName, params = NavigationParams) => {
+  _container.dispatch(NavigationActions.navigate({
+    type: 'Navigation/NAVIGATE',
+    routeName,
+    params,
+  }));
+};
+
+const getCurrentRoute = () => {
+  if (!_container || !_container.state.nav) {
+    return null;
+  }
+  return _container.state.nav.routes[_container.state.nav.index] || null;
+};
+
+const goBack = () => {
+  if (_container) {
+    const action = NavigationActions.back({});
+    _container.dispatch(action);
+  }
+};
 
 export default {
-	navigate,
-	reset,
-	setTopLevelNavigator,
+  setContainer,
+  navigate,
+  reset,
+  getCurrentRoute,
+  goBack,
+  getContainer,
 };

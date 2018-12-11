@@ -1,9 +1,0 @@
-1b5e43fa4c8a9a7ec6e1e57efab95e00
-
-
-function isObject(value) {
-  var type = typeof value;
-  return value != null && (type == 'object' || type == 'function');
-}
-
-module.exports = isObject;

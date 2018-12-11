@@ -1,61 +1,134 @@
 import React, { Component } from 'react';
+import { StyleSheet, Text } from 'react-native';
+import PropTypes from 'prop-types';
 import {
-  withNavigation,
-  createStackNavigator,
-  DrawerActions,
-} from 'react-navigation';
-import {
-  Container,
   Header,
   Title,
   Left,
-  Icon,
   Right,
   Button,
   Body,
-  Content,
-  Text,
-  Card,
-  CardItem,
 } from 'native-base';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { StyleSheet } from 'react-native';
+import theme from '../../theme';
+import { getFontSize, dySize } from '../../utils/responsive';
 
-import {
-  createDrawerNavigator,
-  createNavigationContainer,
-} from 'react-navigation';
-import { navStyles } from '../theme';
+const styles = StyleSheet.create({
+  rightView: {
+    flex: 1,
+    alignItems: 'flex-end',
+  },
+  leftView: {
+    flex: 1,
+  }
+});
 
-class DrawerHeader extends Component {
+class ScreenHeader extends Component {
+  
+  static propTypes = {
+    backgroundColor: PropTypes.string,
+    title: PropTypes.string.isRequired,
+    rightIcon: PropTypes.string,
+    rightText: PropTypes.string,
+    leftIcon: PropTypes.string,
+    leftText: PropTypes.string,
+    textColor: PropTypes.string,
+    onPressLeft: PropTypes.func,
+    onPressRight: PropTypes.func,
+    borderBottomWidth: PropTypes.number
+  }
+
+  static defaultProps = {
+    backgroundColor: 'transparent',
+    title: '',
+    rightIcon: '',
+    rightText: '',
+    leftIcon: '',
+    leftText: '',
+    textColor: theme.colors.black,
+    onPressLeft: () => undefined,
+    onPressRight: () => undefined,
+    borderBottomWidth: 0
+  }
+
   render() {
+    const { 
+      backgroundColor, 
+      title, 
+      rightIcon, 
+      rightText, 
+      leftIcon, 
+      leftText, 
+      textColor,
+      borderBottomWidth
+    } = this.props;
+    const headerStyle = {
+      backgroundColor,
+      borderBottomColor: theme.colors.lightgray,
+      borderBottomWidth: borderBottomWidth,
+      elevation: 0,
+      paddingHorizontal: dySize(10)
+    }
+    const headerText = {
+      fontSize: theme.FONT_SIZE_MEDIUM,
+      fontFamily: 'Montserrat-Regular',
+      color: textColor,
+      textAlign: 'center',
+    }
+    const buttonText = {
+      fontSize: getFontSize(14),
+      fontFamily: 'Montserrat-Medium',
+      color: textColor,
+    }
     return (
-      <Header style={styles.headerStyle}>
-        <Left>
-          <Button
-            transparent
-            onPress={() => this.props.navigation.dispatch(DrawerActions.toggleDrawer())
-            }
-          >
-            <Ionicons name="ios-menu" size={26} color={'white'} />
-          </Button>
+      <Header style={headerStyle}>
+        <Left style={styles.leftView}>
+          {
+            leftIcon.length > 0 &&
+            <Button
+              transparent
+              onPress={() => this.props.onPressLeft()}
+            >
+              <Ionicons name={leftIcon} size={26} color={textColor} />
+            </Button>
+          }
+          {
+            leftText.length > 0 &&
+            <Text
+              transparent
+              onPress={() => this.props.onPressLeft()}
+            >
+              <Text style={buttonText}>{leftText}</Text>
+            </Text>
+          }          
         </Left>
-        <Body>
-          <Title style={styles.headerText}>{this.props.title}</Title>
+        <Body style={{flex: 4, alignItems: 'center'}}>
+          <Title style={headerText}>{title}</Title>
         </Body>
-        <Right />
+        <Right style={styles.rightView}>
+          {
+            rightIcon.length > 0 &&
+            <Button
+              transparent
+              onPress={() => this.props.onPressRight()}
+            >
+              <Ionicons name={rightIcon} size={26} color={textColor} />
+            </Button>
+          }
+          {
+            rightText.length > 0 &&
+            <Text
+              transparent
+              onPress={() => this.props.onPressRight()}
+              style={styles.rightView}
+            >
+              <Text style={[buttonText, {textAlign: 'right'}]}>{rightText}</Text>
+            </Text>
+          }   
+        </Right>
       </Header>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  headerStyle: {
-    backgroundColor: navStyles.BACKGROUND_COLOR,
-  },
-  headerText: {
-    color: navStyles.FONT_COLOR,
-  },
-});
-
-export default DrawerHeader;
+export default ScreenHeader;

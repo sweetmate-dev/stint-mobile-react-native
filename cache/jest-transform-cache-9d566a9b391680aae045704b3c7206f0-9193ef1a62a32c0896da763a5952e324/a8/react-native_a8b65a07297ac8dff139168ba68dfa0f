@@ -1,3 +1,0 @@
-9f486611b46c3d47bf8f98b588f77fa1
-Object.defineProperty(exports, "__esModule", { value: true });var _reactNative = require('react-native');Object.keys(_reactNative).forEach(function (key) {if (key === "default" || key === "__esModule") return;Object.defineProperty(exports, key, { enumerable: true, get: function get() {return _reactNative[key];} });});
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlYWN0LW5hdGl2ZS5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoieUdBQUEiLCJmaWxlIjoicmVhY3QtbmF0aXZlLmpzIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0ICogZnJvbSAncmVhY3QtbmF0aXZlJztcbiJdfQ==

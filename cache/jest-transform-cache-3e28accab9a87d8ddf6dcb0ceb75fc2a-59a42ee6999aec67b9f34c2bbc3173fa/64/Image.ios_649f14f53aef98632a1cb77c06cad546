@@ -1,0 +1,117 @@
+02dbb1c78a583fc42b62814efea9253b
+
+
+'use strict';
+var _jsxFileName = '/Volumes/Work/ReactNative/stint-mobile-app-dev/node_modules/react-native/Libraries/Image/Image.ios.js';
+
+var Image = require('create-react-class')({
+  displayName: 'Image',
+  propTypes: {
+
+    style: require('StyleSheetPropType')(require('ImageStylePropTypes')),
+
+    source: require('ImageSourcePropType'),
+
+    defaultSource: require('prop-types').oneOfType([require('prop-types').shape({
+      uri: require('prop-types').string,
+      width: require('prop-types').number,
+      height: require('prop-types').number,
+      scale: require('prop-types').number }), require('prop-types').number]),
+
+    accessible: require('prop-types').bool,
+
+    accessibilityLabel: require('prop-types').node,
+
+    blurRadius: require('prop-types').number,
+
+    capInsets: require('EdgeInsetsPropType'),
+
+    resizeMethod: require('prop-types').oneOf(['auto', 'resize', 'scale']),
+
+    resizeMode: require('prop-types').oneOf(['cover', 'contain', 'stretch', 'repeat', 'center']),
+
+    testID: require('prop-types').string,
+
+    onLayout: require('prop-types').func,
+
+    onLoadStart: require('prop-types').func,
+
+    onProgress: require('prop-types').func,
+
+    onError: require('prop-types').func,
+
+    onPartialLoad: require('prop-types').func,
+
+    onLoad: require('prop-types').func,
+
+    onLoadEnd: require('prop-types').func },
+
+  statics: {
+    resizeMode: require('ImageResizeMode'),
+
+    getSize: function getSize(uri, success, failure) {
+      require('NativeModules').ImageViewManager.getSize(uri, success, failure || function () {
+        console.warn('Failed to get size for image: ' + uri);
+      });
+    },
+
+    prefetch: function prefetch(url) {
+      return require('NativeModules').ImageViewManager.prefetchImage(url);
+    },
+
+    resolveAssetSource: require('resolveAssetSource') },
+
+  mixins: [require('NativeMethodsMixin')],
+
+  viewConfig: {
+    uiViewClassName: 'UIView',
+    validAttributes: require('ReactNativeViewAttributes').UIView },
+
+  render: function render() {
+    var source = require('resolveAssetSource')(this.props.source) || {
+      uri: undefined,
+      width: undefined,
+      height: undefined };
+
+    var sources = void 0;
+    var style = void 0;
+    if (Array.isArray(source)) {
+      style = require('flattenStyle')([styles.base, this.props.style]) || {};
+      sources = source;
+    } else {
+      var _width = source.width,
+          _height = source.height,
+          uri = source.uri;
+      style = require('flattenStyle')([{ width: _width, height: _height }, styles.base, this.props.style]) || {};
+      sources = [source];
+
+      if (uri === '') {
+        console.warn('source.uri should not be an empty string');
+      }
+    }
+
+    var resizeMode = this.props.resizeMode || (style || {}).resizeMode || 'cover';
+    var tintColor = (style || {}).tintColor;
+
+    if (this.props.src) {
+      console.warn('The <Image> component requires a `source` property rather than `src`.');
+    }
+
+    if (this.props.children) {
+      throw new Error('The <Image> component cannot contain children. If you want to render content on top of the image, consider using the <ImageBackground> component or absolute positioning.');
+    }
+
+    return require('React').createElement(RCTImageView, babelHelpers.extends({}, this.props, {
+      style: style,
+      resizeMode: resizeMode,
+      tintColor: tintColor,
+      source: sources, __source: { fileName: _jsxFileName, lineNumber: 247 } }));
+  } });
+
+var styles = require('StyleSheet').create({
+  base: {
+    overflow: 'hidden' } });
+
+var RCTImageView = require('requireNativeComponent')('RCTImageView', Image);
+
+module.exports = Image;

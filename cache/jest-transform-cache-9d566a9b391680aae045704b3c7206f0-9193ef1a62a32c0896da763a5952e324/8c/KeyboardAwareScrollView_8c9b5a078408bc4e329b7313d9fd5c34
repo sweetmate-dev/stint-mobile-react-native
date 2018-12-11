@@ -1,8 +1,0 @@
-547be15e1bbdbf46e2c9a3f9da5ab407
-Object.defineProperty(exports, "__esModule", { value: true });
-
-var _reactNative = require('react-native');
-var _KeyboardAwareHOC = require('./KeyboardAwareHOC');var _KeyboardAwareHOC2 = _interopRequireDefault(_KeyboardAwareHOC);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}exports.default =
-
-(0, _KeyboardAwareHOC2.default)(_reactNative.ScrollView);
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIktleWJvYXJkQXdhcmVTY3JvbGxWaWV3LmpzIl0sIm5hbWVzIjpbIlNjcm9sbFZpZXciXSwibWFwcGluZ3MiOiI7O0FBRUE7QUFDQSxzRDs7QUFFZSxnQ0FBdUJBLHVCQUF2QixDIiwiZmlsZSI6IktleWJvYXJkQXdhcmVTY3JvbGxWaWV3LmpzIiwic291cmNlc0NvbnRlbnQiOlsiLyogQGZsb3cgKi9cblxuaW1wb3J0IHsgU2Nyb2xsVmlldyB9IGZyb20gJ3JlYWN0LW5hdGl2ZSdcbmltcG9ydCBsaXN0ZW5Ub0tleWJvYXJkRXZlbnRzIGZyb20gJy4vS2V5Ym9hcmRBd2FyZUhPQydcblxuZXhwb3J0IGRlZmF1bHQgbGlzdGVuVG9LZXlib2FyZEV2ZW50cyhTY3JvbGxWaWV3KVxuIl19

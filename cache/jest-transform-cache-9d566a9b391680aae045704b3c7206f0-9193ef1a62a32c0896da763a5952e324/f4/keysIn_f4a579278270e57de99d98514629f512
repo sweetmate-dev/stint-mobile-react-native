@@ -1,8 +1,0 @@
-1686c806feeb36fcac4ba9f8565cce53
-
-
-function keysIn(object) {
-  return require('./isArrayLike')(object) ? require('./_arrayLikeKeys')(object, true) : require('./_baseKeysIn')(object);
-}
-
-module.exports = keysIn;

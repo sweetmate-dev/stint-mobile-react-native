@@ -1,0 +1,14 @@
+0b17fd12243ff6e3ec111533e2a90c12
+
+
+'use strict';
+
+var Animated = {
+  View: require('AnimatedImplementation').createAnimatedComponent(require('View')),
+  Text: require('AnimatedImplementation').createAnimatedComponent(require('Text')),
+  Image: require('AnimatedImplementation').createAnimatedComponent(require('Image')),
+  ScrollView: require('AnimatedImplementation').createAnimatedComponent(require('ScrollView')) };
+
+babelHelpers.extends(Animated, require('AnimatedImplementation'));
+
+module.exports = Animated;

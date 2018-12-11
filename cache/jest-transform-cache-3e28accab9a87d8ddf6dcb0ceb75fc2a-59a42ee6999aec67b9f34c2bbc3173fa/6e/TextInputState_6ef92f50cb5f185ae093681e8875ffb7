@@ -1,0 +1,36 @@
+d2c696bfecc30a30f5ec76c5d191ca37
+
+
+'use strict';
+
+var TextInputState = {
+
+  _currentlyFocusedID: null,
+
+  currentlyFocusedField: function currentlyFocusedField() {
+    return this._currentlyFocusedID;
+  },
+
+  focusTextInput: function focusTextInput(textFieldID) {
+    if (this._currentlyFocusedID !== textFieldID && textFieldID !== null) {
+      this._currentlyFocusedID = textFieldID;
+      if (require('Platform').OS === 'ios') {
+        require('UIManager').focus(textFieldID);
+      } else if (require('Platform').OS === 'android') {
+        require('UIManager').dispatchViewManagerCommand(textFieldID, require('UIManager').AndroidTextInput.Commands.focusTextInput, null);
+      }
+    }
+  },
+
+  blurTextInput: function blurTextInput(textFieldID) {
+    if (this._currentlyFocusedID === textFieldID && textFieldID !== null) {
+      this._currentlyFocusedID = null;
+      if (require('Platform').OS === 'ios') {
+        require('UIManager').blur(textFieldID);
+      } else if (require('Platform').OS === 'android') {
+        require('UIManager').dispatchViewManagerCommand(textFieldID, require('UIManager').AndroidTextInput.Commands.blurTextInput, null);
+      }
+    }
+  } };
+
+module.exports = TextInputState;

@@ -1,0 +1,15 @@
+37e20866f6585825c2c24bee1e572d07
+
+module.exports = {
+	Text: "text",
+	Directive: "directive",
+	Comment: "comment",
+	Script: "script",
+	Style: "style",
+	Tag: "tag",
+	CDATA: "cdata",
+	Doctype: "doctype",
+
+	isTag: function isTag(elem) {
+		return elem.type === "tag" || elem.type === "script" || elem.type === "style";
+	} };

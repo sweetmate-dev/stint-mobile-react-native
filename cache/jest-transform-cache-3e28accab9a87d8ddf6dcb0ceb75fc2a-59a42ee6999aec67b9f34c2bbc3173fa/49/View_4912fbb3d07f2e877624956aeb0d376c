@@ -1,0 +1,43 @@
+820f3864806ef0e53c545eb5bd16dbff
+
+
+'use strict';
+var _jsxFileName = '/Volumes/Work/ReactNative/stint-mobile-app-dev/node_modules/react-native/Libraries/Components/View/View.js';var View = function (_ReactNative$NativeCo) {
+  babelHelpers.inherits(View, _ReactNative$NativeCo);function View() {
+    var _ref;var _temp, _this, _ret;babelHelpers.classCallCheck(this, View);for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }return _ret = (_temp = (_this = babelHelpers.possibleConstructorReturn(this, (_ref = View.__proto__ || Object.getPrototypeOf(View)).call.apply(_ref, [this].concat(args))), _this), _this.viewConfig = {
+      uiViewClassName: 'RCTView',
+      validAttributes: require('ReactNativeViewAttributes').RCTView }, _temp), babelHelpers.possibleConstructorReturn(_this, _ret);
+  }babelHelpers.createClass(View, [{ key: 'getChildContext', value: function getChildContext() {
+      return {
+        isInAParentText: false };
+    } }, { key: 'render', value: function render() {
+      require('fbjs/lib/invariant')(!(this.context.isInAParentText && require('Platform').OS === 'android'), 'Nesting of <View> within <Text> is not supported on Android.');
+
+      return require('React').createElement(RCTView, babelHelpers.extends({}, this.props, { __source: { fileName: _jsxFileName, lineNumber: 60 } }));
+    } }]);return View;
+}(require('ReactNative').NativeComponent);View.propTypes = require('ViewPropTypes');View.childContextTypes = require('ViewContext').ViewContextTypes;
+
+var RCTView = require('requireNativeComponent')('RCTView', View, {
+  nativeOnly: {
+    nativeBackgroundAndroid: true,
+    nativeForegroundAndroid: true } });
+
+if (__DEV__) {
+  var UIManager = require('UIManager');
+  var viewConfig = UIManager.viewConfigs && UIManager.viewConfigs.RCTView || {};
+  for (var prop in viewConfig.nativeProps) {
+    var viewAny = View;
+    if (!viewAny.propTypes[prop] && !require('ReactNativeStyleAttributes')[prop]) {
+      throw new Error('View is missing propType for native prop `' + prop + '`');
+    }
+  }
+}
+
+var ViewToExport = RCTView;
+if (__DEV__) {
+  ViewToExport = View;
+}
+
+module.exports = ViewToExport;

@@ -1,0 +1,305 @@
+682e9756227480cea32ab5af34c60493
+/* istanbul ignore next */var cov_1n3k8xwoto = function () {
+  var path = '/Volumes/Work/ReactNative/stint-mobile-app-dev/src/screens/LandingScreen/LandingScreen.js',
+      hash = '0d07d1e862963e80ae1196db2b43b7b4cecf6e98',
+      Function = function () {}.constructor,
+      global = new Function('return this')(),
+      gcv = '__coverage__',
+      coverageData = {
+    path: '/Volumes/Work/ReactNative/stint-mobile-app-dev/src/screens/LandingScreen/LandingScreen.js',
+    statementMap: {
+      '0': {
+        start: {
+          line: 1,
+          column: 0
+        },
+        end: {
+          line: 1,
+          column: 62
+        }
+      },
+      '1': {
+        start: {
+          line: 1,
+          column: 81
+        },
+        end: {
+          line: 1,
+          column: 172
+        }
+      },
+      '2': {
+        start: {
+          line: 1,
+          column: 186
+        },
+        end: {
+          line: 1,
+          column: 202
+        }
+      },
+      '3': {
+        start: {
+          line: 1,
+          column: 217
+        },
+        end: {
+          line: 1,
+          column: 259
+        }
+      },
+      '4': {
+        start: {
+          line: 2,
+          column: 18
+        },
+        end: {
+          line: 2,
+          column: 40
+        }
+      },
+      '5': {
+        start: {
+          line: 3,
+          column: 17
+        },
+        end: {
+          line: 32,
+          column: 51
+        }
+      },
+      '6': {
+        start: {
+          line: 3,
+          column: 40
+        },
+        end: {
+          line: 3,
+          column: 90
+        }
+      },
+      '7': {
+        start: {
+          line: 3,
+          column: 117
+        },
+        end: {
+          line: 3,
+          column: 167
+        }
+      },
+      '8': {
+        start: {
+          line: 3,
+          column: 167
+        },
+        end: {
+          line: 3,
+          column: 311
+        }
+      },
+      '9': {
+        start: {
+          line: 3,
+          column: 312
+        },
+        end: {
+          line: 32,
+          column: 10
+        }
+      },
+      '10': {
+        start: {
+          line: 5,
+          column: 6
+        },
+        end: {
+          line: 26,
+          column: 137
+        }
+      },
+      '11': {
+        start: {
+          line: 32,
+          column: 10
+        },
+        end: {
+          line: 32,
+          column: 32
+        }
+      },
+      '12': {
+        start: {
+          line: 32,
+          column: 52
+        },
+        end: {
+          line: 32,
+          column: 85
+        }
+      }
+    },
+    fnMap: {
+      '0': {
+        name: '(anonymous_0)',
+        decl: {
+          start: {
+            line: 3,
+            column: 17
+          },
+          end: {
+            line: 3,
+            column: 18
+          }
+        },
+        loc: {
+          start: {
+            line: 3,
+            column: 39
+          },
+          end: {
+            line: 32,
+            column: 33
+          }
+        },
+        line: 3
+      },
+      '1': {
+        name: 'AnatomyExample',
+        decl: {
+          start: {
+            line: 3,
+            column: 99
+          },
+          end: {
+            line: 3,
+            column: 113
+          }
+        },
+        loc: {
+          start: {
+            line: 3,
+            column: 116
+          },
+          end: {
+            line: 3,
+            column: 312
+          }
+        },
+        line: 3
+      },
+      '2': {
+        name: 'render',
+        decl: {
+          start: {
+            line: 3,
+            column: 387
+          },
+          end: {
+            line: 3,
+            column: 393
+          }
+        },
+        loc: {
+          start: {
+            line: 4,
+            column: 4
+          },
+          end: {
+            line: 32,
+            column: 5
+          }
+        },
+        line: 4
+      }
+    },
+    branchMap: {
+      '0': {
+        loc: {
+          start: {
+            line: 3,
+            column: 220
+          },
+          end: {
+            line: 3,
+            column: 285
+          }
+        },
+        type: 'binary-expr',
+        locations: [{
+          start: {
+            line: 3,
+            column: 220
+          },
+          end: {
+            line: 3,
+            column: 244
+          }
+        }, {
+          start: {
+            line: 3,
+            column: 248
+          },
+          end: {
+            line: 3,
+            column: 285
+          }
+        }],
+        line: 3
+      }
+    },
+    s: {
+      '0': 0,
+      '1': 0,
+      '2': 0,
+      '3': 0,
+      '4': 0,
+      '5': 0,
+      '6': 0,
+      '7': 0,
+      '8': 0,
+      '9': 0,
+      '10': 0,
+      '11': 0,
+      '12': 0
+    },
+    f: {
+      '0': 0,
+      '1': 0,
+      '2': 0
+    },
+    b: {
+      '0': [0, 0]
+    },
+    _coverageSchema: '332fd63041d2c1bcb487cc26dd0d5f7d97098a6c'
+  },
+      coverage = global[gcv] || (global[gcv] = {});
+
+  if (coverage[path] && coverage[path].hash === hash) {
+    return coverage[path];
+  }
+
+  coverageData.hash = hash;
+  return coverage[path] = coverageData;
+}();
+
+cov_1n3k8xwoto.s[0]++;
+Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = /* istanbul ignore next */(cov_1n3k8xwoto.s[1]++, '/Volumes/Work/ReactNative/stint-mobile-app-dev/src/screens/LandingScreen/LandingScreen.js');var _react = /* istanbul ignore next */(cov_1n3k8xwoto.s[2]++, require('react'));var _react2 = /* istanbul ignore next */(cov_1n3k8xwoto.s[3]++, babelHelpers.interopRequireDefault(_react));
+var _nativeBase = /* istanbul ignore next */(cov_1n3k8xwoto.s[4]++, require('native-base'));var AnatomyExample = /* istanbul ignore next */(cov_1n3k8xwoto.s[5]++, function (_Component) {
+  /* istanbul ignore next */cov_1n3k8xwoto.f[0]++;
+  cov_1n3k8xwoto.s[6]++;
+  babelHelpers.inherits(AnatomyExample, _Component);function AnatomyExample() {
+    /* istanbul ignore next */cov_1n3k8xwoto.f[1]++;
+    cov_1n3k8xwoto.s[7]++;
+    babelHelpers.classCallCheck(this, AnatomyExample); /* istanbul ignore next */cov_1n3k8xwoto.s[8]++;
+    return babelHelpers.possibleConstructorReturn(this, ( /* istanbul ignore next */(cov_1n3k8xwoto.b[0][0]++, AnatomyExample.__proto__) || /* istanbul ignore next */(cov_1n3k8xwoto.b[0][1]++, Object.getPrototypeOf(AnatomyExample))).apply(this, arguments));
+  } /* istanbul ignore next */cov_1n3k8xwoto.s[9]++;
+  babelHelpers.createClass(AnatomyExample, [{ key: 'render', value: function render() {
+      /* istanbul ignore next */cov_1n3k8xwoto.f[2]++;
+      cov_1n3k8xwoto.s[10]++;
+
+      return _react2.default.createElement(_nativeBase.Container, { __source: { fileName: _jsxFileName, lineNumber: 6 } }, _react2.default.createElement(_nativeBase.Header, { __source: { fileName: _jsxFileName, lineNumber: 7 } }, _react2.default.createElement(_nativeBase.Left, { __source: { fileName: _jsxFileName, lineNumber: 8 } }, _react2.default.createElement(_nativeBase.Button, { transparent: true, __source: { fileName: _jsxFileName, lineNumber: 9 } }, _react2.default.createElement(_nativeBase.Icon, { name: 'menu', __source: { fileName: _jsxFileName, lineNumber: 10 } }))), _react2.default.createElement(_nativeBase.Body, { __source: { fileName: _jsxFileName, lineNumber: 13 } }, _react2.default.createElement(_nativeBase.Title, { __source: { fileName: _jsxFileName, lineNumber: 14 } }, 'Header')), _react2.default.createElement(_nativeBase.Right, { __source: { fileName: _jsxFileName, lineNumber: 16 } })), _react2.default.createElement(_nativeBase.Content, { __source: { fileName: _jsxFileName, lineNumber: 18 } }, _react2.default.createElement(_nativeBase.Text, { __source: { fileName: _jsxFileName, lineNumber: 19 } }, 'This is Content Section')), _react2.default.createElement(_nativeBase.Footer, { __source: { fileName: _jsxFileName, lineNumber: 23 } }, _react2.default.createElement(_nativeBase.FooterTab, { __source: { fileName: _jsxFileName, lineNumber: 24 } }, _react2.default.createElement(_nativeBase.Button, { full: true, __source: { fileName: _jsxFileName, lineNumber: 25 } }, _react2.default.createElement(_nativeBase.Text, { __source: { fileName: _jsxFileName, lineNumber: 26 } }, 'Footer')))));
+    } }]); /* istanbul ignore next */cov_1n3k8xwoto.s[11]++;
+  return AnatomyExample;
+}(_react.Component)); /* istanbul ignore next */cov_1n3k8xwoto.s[12]++;
+exports.default = AnatomyExample;

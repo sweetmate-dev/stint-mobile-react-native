@@ -1,8 +1,0 @@
-f0d15f757443349ed8e61b0ca094af13
-var getNative = require('./_getNative'),
-    root = require('./_root');
-
-/* Built-in method references that are verified to be native. */
-var WeakMap = getNative(root, 'WeakMap');
-
-module.exports = WeakMap;

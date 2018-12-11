@@ -1,0 +1,21 @@
+91eefc83b848ffbf6b00873849c1b8c2
+
+
+'use strict';
+
+module.exports = function (moduleName) {
+  var RealComponent = require.requireActual(moduleName);
+  var React = require('react');
+
+  var Component = function (_RealComponent) {
+    babelHelpers.inherits(Component, _RealComponent);function Component() {
+      babelHelpers.classCallCheck(this, Component);return babelHelpers.possibleConstructorReturn(this, (Component.__proto__ || Object.getPrototypeOf(Component)).apply(this, arguments));
+    }babelHelpers.createClass(Component, [{ key: 'render', value: function render() {
+        var name = RealComponent.displayName || RealComponent.name;
+
+        return React.createElement(name.replace(/^(RCT|RK)/, ''), this.props, this.props.children);
+      } }]);return Component;
+  }(RealComponent);
+
+  return Component;
+};

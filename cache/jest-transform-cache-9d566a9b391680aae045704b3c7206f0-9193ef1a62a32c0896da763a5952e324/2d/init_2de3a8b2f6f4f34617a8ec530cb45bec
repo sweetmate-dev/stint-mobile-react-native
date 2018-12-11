@@ -1,2 +1,0 @@
-ba2838b9e390a484f37eb381a338116f
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = setDefaultThemeStyle;var _components2 = _interopRequireDefault(require("./theme/components"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function setDefaultThemeStyle() {var theme = (0, _components2.default)();require("native-base-shoutem-theme").Theme.setDefaultThemeStyle(theme);}

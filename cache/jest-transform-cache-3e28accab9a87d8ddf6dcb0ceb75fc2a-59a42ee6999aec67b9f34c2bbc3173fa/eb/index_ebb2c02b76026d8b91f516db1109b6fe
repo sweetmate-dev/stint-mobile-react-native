@@ -1,0 +1,17 @@
+541f39a64947b4c3113d504c6a27f227
+"use strict";
+
+var NumberIsNaN = function NumberIsNaN(value) {
+	return value !== value;
+};
+
+module.exports = function is(a, b) {
+	if (a === 0 && b === 0) {
+		return 1 / a === 1 / b;
+	} else if (a === b) {
+		return true;
+	} else if (NumberIsNaN(a) && NumberIsNaN(b)) {
+		return true;
+	}
+	return false;
+};

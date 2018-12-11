@@ -1,0 +1,13 @@
+4dd0825ad1c32a12726360daf5c339a0
+Object.defineProperty(exports, "__esModule", { value: true });exports.getImageSource = exports.ToolbarAndroid = exports.TabBarItemIOS = exports.TabBarItem = exports.Button = undefined;
+
+var _createIconSet = require('./lib/create-icon-set');var _createIconSet2 = babelHelpers.interopRequireDefault(_createIconSet);
+var _Feather = require('./glyphmaps/Feather.json');var _Feather2 = babelHelpers.interopRequireDefault(_Feather);
+
+var iconSet = (0, _createIconSet2.default)(_Feather2.default, 'Feather', 'Feather.ttf');exports.default = iconSet;
+
+var Button = exports.Button = iconSet.Button;
+var TabBarItem = exports.TabBarItem = iconSet.TabBarItem;
+var TabBarItemIOS = exports.TabBarItemIOS = iconSet.TabBarItemIOS;
+var ToolbarAndroid = exports.ToolbarAndroid = iconSet.ToolbarAndroid;
+var getImageSource = exports.getImageSource = iconSet.getImageSource;

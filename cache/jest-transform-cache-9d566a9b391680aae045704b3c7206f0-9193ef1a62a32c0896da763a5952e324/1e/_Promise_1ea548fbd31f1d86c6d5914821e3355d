@@ -1,8 +1,0 @@
-78d8ebed8703debc1522a5c0e024651c
-var getNative = require('./_getNative'),
-    root = require('./_root');
-
-/* Built-in method references that are verified to be native. */
-var Promise = getNative(root, 'Promise');
-
-module.exports = Promise;

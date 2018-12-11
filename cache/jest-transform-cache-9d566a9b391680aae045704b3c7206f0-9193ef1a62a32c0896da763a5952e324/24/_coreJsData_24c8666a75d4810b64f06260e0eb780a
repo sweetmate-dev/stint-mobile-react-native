@@ -1,0 +1,7 @@
+b6156de782a2522030c6d0a2da2efd29
+var root = require('./_root');
+
+/** Used to detect overreaching core-js shims. */
+var coreJsData = root['__core-js_shared__'];
+
+module.exports = coreJsData;

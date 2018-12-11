@@ -1,0 +1,18 @@
+fab018f1d182d34556938a84798671a3
+
+
+var asyncTag = '[object AsyncFunction]',
+    funcTag = '[object Function]',
+    genTag = '[object GeneratorFunction]',
+    proxyTag = '[object Proxy]';
+
+function isFunction(value) {
+  if (!require('./isObject')(value)) {
+    return false;
+  }
+
+  var tag = require('./_baseGetTag')(value);
+  return tag == funcTag || tag == genTag || tag == asyncTag || tag == proxyTag;
+}
+
+module.exports = isFunction;

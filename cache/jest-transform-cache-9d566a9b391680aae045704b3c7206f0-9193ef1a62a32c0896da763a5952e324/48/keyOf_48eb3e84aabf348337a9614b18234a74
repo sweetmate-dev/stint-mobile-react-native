@@ -1,0 +1,33 @@
+56e6c1968b55109626bb411411d9af86
+"use strict";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var keyOf = function keyOf(oneKeyObj) {
+  var key;
+  for (key in oneKeyObj) {
+    if (!oneKeyObj.hasOwnProperty(key)) {
+      continue;
+    }
+    return key;
+  }
+  return null;
+};
+
+module.exports = keyOf;

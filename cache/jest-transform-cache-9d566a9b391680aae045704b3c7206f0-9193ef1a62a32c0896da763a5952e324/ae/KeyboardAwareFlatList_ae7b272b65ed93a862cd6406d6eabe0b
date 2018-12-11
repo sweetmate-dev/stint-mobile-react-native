@@ -1,0 +1,8 @@
+fb6456467ce95c9366456895c7406a48
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+var _reactNative = require("react-native");
+var _KeyboardAwareHOC = _interopRequireDefault(require("./KeyboardAwareHOC"));function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}var _default = (0, _KeyboardAwareHOC.default)(_reactNative.FlatList);exports.default = _default;

@@ -1,0 +1,28 @@
+25fe33a2752c91ade48dd8051a047f86
+
+
+function copyObject(source, props, object, customizer) {
+  var isNew = !object;
+  object || (object = {});
+
+  var index = -1,
+      length = props.length;
+
+  while (++index < length) {
+    var key = props[index];
+
+    var newValue = customizer ? customizer(object[key], source[key], key, object, source) : undefined;
+
+    if (newValue === undefined) {
+      newValue = source[key];
+    }
+    if (isNew) {
+      require('./_baseAssignValue')(object, key, newValue);
+    } else {
+      require('./_assignValue')(object, key, newValue);
+    }
+  }
+  return object;
+}
+
+module.exports = copyObject;

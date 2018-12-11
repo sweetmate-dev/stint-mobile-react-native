@@ -1,0 +1,8 @@
+bb3d732e7853d894dd14d73cefc868ec
+'use strict';
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = require('./cjs/schedule-tracking.production.min.js');
+} else {
+  module.exports = require('./cjs/schedule-tracking.development.js');
+}

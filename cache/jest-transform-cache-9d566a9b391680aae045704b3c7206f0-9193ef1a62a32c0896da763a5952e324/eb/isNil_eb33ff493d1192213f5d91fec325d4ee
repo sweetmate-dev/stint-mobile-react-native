@@ -1,0 +1,8 @@
+97baee0f1a0f4aa6c1ab027db0c557c9
+
+
+function isNil(value) {
+  return value == null;
+}
+
+module.exports = isNil;

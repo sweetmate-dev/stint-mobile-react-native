@@ -1,0 +1,18 @@
+d0580696fcd36857b90f14c9084e494a
+
+
+function apply(func, thisArg, args) {
+  switch (args.length) {
+    case 0:
+      return func.call(thisArg);
+    case 1:
+      return func.call(thisArg, args[0]);
+    case 2:
+      return func.call(thisArg, args[0], args[1]);
+    case 3:
+      return func.call(thisArg, args[0], args[1], args[2]);}
+
+  return func.apply(thisArg, args);
+}
+
+module.exports = apply;

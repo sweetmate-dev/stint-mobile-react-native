@@ -1,0 +1,12 @@
+b26dcbc665440157c016e7435b96de46
+
+
+'use strict';
+
+var EdgeInsetsPropType = require('prop-types').shape({
+  top: require('prop-types').number,
+  left: require('prop-types').number,
+  bottom: require('prop-types').number,
+  right: require('prop-types').number });
+
+module.exports = EdgeInsetsPropType;

@@ -1,0 +1,16 @@
+c61702ea85df24216c367cb1a2248bd8
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.getImageSource = exports.ToolbarAndroid = exports.TabBarItemIOS = exports.TabBarItem = exports.Button = exports.default = void 0;
+
+var _createIconSet = _interopRequireDefault(require("./lib/create-icon-set"));
+var _FontAwesome = _interopRequireDefault(require("./glyphmaps/FontAwesome.json"));function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
+
+var iconSet = (0, _createIconSet.default)(_FontAwesome.default, 'FontAwesome', 'FontAwesome.ttf');var _default = iconSet;exports.default = _default;
+
+var Button = iconSet.Button;exports.Button = Button;
+var TabBarItem = iconSet.TabBarItem;exports.TabBarItem = TabBarItem;
+var TabBarItemIOS = iconSet.TabBarItemIOS;exports.TabBarItemIOS = TabBarItemIOS;
+var ToolbarAndroid = iconSet.ToolbarAndroid;exports.ToolbarAndroid = ToolbarAndroid;
+var getImageSource = iconSet.getImageSource;exports.getImageSource = getImageSource;

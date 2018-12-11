@@ -1,0 +1,170 @@
+4d2999633f12ba983849d1c365aad0a1
+
+
+
+
+
+
+
+
+
+
+'use strict';
+
+
+
+
+
+
+var KeyboardEventEmitter = new (require('NativeEventEmitter'))(require('NativeModules').KeyboardObserver);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var Keyboard = {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  addListener: function addListener(eventName, callback) {
+    require('fbjs/lib/invariant')(false, 'Dummy method used for documentation');
+  },
+
+
+
+
+
+
+
+  removeListener: function removeListener(eventName, callback) {
+    require('fbjs/lib/invariant')(false, 'Dummy method used for documentation');
+  },
+
+
+
+
+
+
+  removeAllListeners: function removeAllListeners(eventName) {
+    require('fbjs/lib/invariant')(false, 'Dummy method used for documentation');
+  },
+
+
+
+
+  dismiss: function dismiss() {
+    require('fbjs/lib/invariant')(false, 'Dummy method used for documentation');
+  },
+
+
+
+
+
+  scheduleLayoutAnimation: function scheduleLayoutAnimation(event) {
+    require('fbjs/lib/invariant')(false, 'Dummy method used for documentation');
+  } };
+
+
+
+Keyboard = KeyboardEventEmitter;
+Keyboard.dismiss = require('dismissKeyboard');
+Keyboard.scheduleLayoutAnimation = function (event) {var
+  duration = event.duration,easing = event.easing;
+  if (duration) {
+    require('LayoutAnimation').configureNext({
+      duration: duration,
+      update: {
+        duration: duration,
+        type: easing && require('LayoutAnimation').Types[easing] || 'keyboard' } });
+
+
+  }
+};
+
+module.exports = Keyboard;

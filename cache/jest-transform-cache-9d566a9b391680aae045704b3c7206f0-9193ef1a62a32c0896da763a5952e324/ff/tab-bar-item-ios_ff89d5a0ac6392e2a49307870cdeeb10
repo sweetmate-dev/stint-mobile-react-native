@@ -1,0 +1,98 @@
+8fec5d0a7fc3e0bd8108be5c0d9b0703
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = createTabBarItemIOSComponent;
+var _isEqual = _interopRequireDefault(require("lodash/isEqual"));
+var _pick = _interopRequireDefault(require("lodash/pick"));
+var _react = _interopRequireWildcard(require("react"));
+var _propTypes = _interopRequireDefault(require("prop-types"));
+var _reactNative = require("./react-native");var _jsxFileName = "/Users/johnamuesi/Documents/PRODUCTION/REACTNATIVE/STINT/stint/node_modules/native-base/node_modules/react-native-vector-icons/lib/tab-bar-item-ios.js";function _interopRequireWildcard(obj) {
+  if (obj && obj.__esModule) {
+    return obj;
+  } else {
+    var newObj = {};if (obj != null) {
+      for (var key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+          var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {
+            Object.defineProperty(newObj, key, desc);
+          } else {
+            newObj[key] = obj[key];
+          }
+        }
+      }
+    }newObj.default = obj;return newObj;
+  }
+}function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }return target;
+  };return _extends.apply(this, arguments);
+}function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;
+}function _possibleConstructorReturn(self, call) {
+  if (call && (typeof call === "object" || typeof call === "function")) {
+    return call;
+  }return _assertThisInitialized(self);
+}function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }return self;
+}function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };return _getPrototypeOf(o);
+}function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);
+}function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;return o;
+  };return _setPrototypeOf(o, p);
+}
+
+function createTabBarItemIOSComponent(IconNamePropType, getImageSource) {
+  var _class, _temp;
+  return _temp = _class = function (_PureComponent) {
+    _inherits(TabBarItemIOS, _PureComponent);function TabBarItemIOS() {
+      _classCallCheck(this, TabBarItemIOS);return _possibleConstructorReturn(this, _getPrototypeOf(TabBarItemIOS).apply(this, arguments));
+    }_createClass(TabBarItemIOS, [{ key: "componentWillMount", value: function componentWillMount() {
+        this.updateIconSources(this.props);
+      } }, { key: "componentWillReceiveProps", value: function componentWillReceiveProps(nextProps) {
+        var keys = Object.keys(TabBarItemIOS.propTypes);
+        if (!(0, _isEqual.default)((0, _pick.default)(nextProps, keys), (0, _pick.default)(this.props, keys))) {
+          this.updateIconSources(nextProps);
+        }
+      } }, { key: "updateIconSources", value: function updateIconSources(props) {
+        var _this = this;
+        if (props.iconName) {
+          getImageSource(props.iconName, props.iconSize, props.iconColor).then(function (icon) {
+            return _this.setState({ icon: icon });
+          });
+        }
+        if (props.selectedIconName || props.selectedIconColor) {
+          var selectedIconName = props.selectedIconName || props.iconName;
+          var selectedIconColor = props.selectedIconColor || props.iconColor;
+          getImageSource(selectedIconName, props.iconSize, selectedIconColor).then(function (selectedIcon) {
+            return _this.setState({ selectedIcon: selectedIcon });
+          });
+        }
+      } }, { key: "render", value: function render() {
+        return _react.default.createElement(_reactNative.TabBarIOS.Item, _extends({}, this.props, this.state, { __source: { fileName: _jsxFileName, lineNumber: 59 } }));
+      } }]);return TabBarItemIOS;
+  }(_react.PureComponent), _class.propTypes = { iconName: IconNamePropType.isRequired, selectedIconName: IconNamePropType, iconSize: _propTypes.default.number, iconColor: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number]), selectedIconColor: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number]) }, _class.defaultProps = { iconSize: 30 }, _temp;
+}

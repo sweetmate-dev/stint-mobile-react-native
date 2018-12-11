@@ -1,0 +1,9 @@
+0e3adb6b0e66e471adc84a130e7392a4
+
+
+function getNative(object, key) {
+  var value = require('./_getValue')(object, key);
+  return require('./_baseIsNative')(value) ? value : undefined;
+}
+
+module.exports = getNative;

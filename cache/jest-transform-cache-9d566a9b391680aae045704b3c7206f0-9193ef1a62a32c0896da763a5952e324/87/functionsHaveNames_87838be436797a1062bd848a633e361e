@@ -1,0 +1,2 @@
+700c2a06ba1c74aaea7819538db666be
+module.exports = typeof function foo() {}.name === 'string'; // when function names are minified, checking for "foo" would break

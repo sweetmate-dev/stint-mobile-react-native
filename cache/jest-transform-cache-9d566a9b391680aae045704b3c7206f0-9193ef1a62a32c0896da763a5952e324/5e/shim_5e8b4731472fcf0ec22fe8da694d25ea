@@ -1,0 +1,13 @@
+47dd094bd7d7b761c0d1bcd4e5c7c363
+'use strict';
+
+var define = require('define-properties');
+var getPolyfill = require('./polyfill');
+
+module.exports = function shimAssign() {
+	var polyfill = getPolyfill();
+	define(Object, { assign: polyfill }, { assign: function () {
+			return Object.assign !== polyfill;
+		} });
+	return polyfill;
+};

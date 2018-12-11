@@ -1,0 +1,14 @@
+2ba2f88e572e86575aeddef3b69f5b22
+
+
+'use strict';
+
+var dummySize = { width: undefined, height: undefined };
+
+var sizesDiffer = function sizesDiffer(one, two) {
+  one = one || dummySize;
+  two = two || dummySize;
+  return one !== two && (one.width !== two.width || one.height !== two.height);
+};
+
+module.exports = sizesDiffer;

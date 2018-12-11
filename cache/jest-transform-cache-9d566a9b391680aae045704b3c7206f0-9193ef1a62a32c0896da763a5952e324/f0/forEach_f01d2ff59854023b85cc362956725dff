@@ -1,0 +1,9 @@
+444cb1163fe29221a804a33df72d4bc9
+
+
+function forEach(collection, iteratee) {
+  var func = require('./isArray')(collection) ? require('./_arrayEach') : require('./_baseEach');
+  return func(collection, require('./_castFunction')(iteratee));
+}
+
+module.exports = forEach;

@@ -1,0 +1,13 @@
+803779513272392715a5baa8db8147ea
+
+
+"use strict";
+
+var merge = function merge(one, two) {
+  var result = {};
+  require('mergeInto')(result, one);
+  require('mergeInto')(result, two);
+  return result;
+};
+
+module.exports = merge;

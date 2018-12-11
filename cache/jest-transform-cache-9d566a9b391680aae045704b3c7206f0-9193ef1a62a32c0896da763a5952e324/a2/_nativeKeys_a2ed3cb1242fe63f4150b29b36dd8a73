@@ -1,0 +1,7 @@
+f8a287614177853fbc3a833be951275a
+var overArg = require('./_overArg');
+
+/* Built-in method references for those with the same name as other `lodash` methods. */
+var nativeKeys = overArg(Object.keys, Object);
+
+module.exports = nativeKeys;

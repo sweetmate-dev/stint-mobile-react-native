@@ -1,0 +1,4 @@
+f55c3c2e0f8bd7768ae4a50be7d21931
+'use strict';
+
+module.exports = require('./es2016');

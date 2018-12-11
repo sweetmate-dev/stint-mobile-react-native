@@ -1,0 +1,9 @@
+10e09c1cafeb503f8882f919712feeb0
+
+
+function flatten(array) {
+  var length = array == null ? 0 : array.length;
+  return length ? require('./_baseFlatten')(array, 1) : [];
+}
+
+module.exports = flatten;

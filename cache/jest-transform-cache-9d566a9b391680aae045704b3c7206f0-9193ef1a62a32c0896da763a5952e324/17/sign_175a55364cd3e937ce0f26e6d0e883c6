@@ -1,0 +1,4 @@
+a4d516943432c4bb9ac7e5b471cfef32
+module.exports = function sign(number) {
+	return number >= 0 ? 1 : -1;
+};

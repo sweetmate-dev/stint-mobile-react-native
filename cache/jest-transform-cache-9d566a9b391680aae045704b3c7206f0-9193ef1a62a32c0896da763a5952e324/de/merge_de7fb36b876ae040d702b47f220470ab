@@ -1,0 +1,8 @@
+d03036f110c00289e954efc03b4b8e9c
+
+
+var merge = require('./_createAssigner')(function (object, source, srcIndex) {
+  require('./_baseMerge')(object, source, srcIndex);
+});
+
+module.exports = merge;

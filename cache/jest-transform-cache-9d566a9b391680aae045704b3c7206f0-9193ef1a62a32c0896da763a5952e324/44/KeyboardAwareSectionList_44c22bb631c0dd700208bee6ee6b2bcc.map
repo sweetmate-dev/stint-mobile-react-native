@@ -1,0 +1,1 @@
+{"version":3,"sources":["KeyboardAwareSectionList.js"],"names":["SectionList"],"mappings":";;AAEA;AACA,sD;;AAEe,gCAAuBA,wBAAvB,C","file":"KeyboardAwareSectionList.js","sourcesContent":["/* @flow */\n\nimport { SectionList } from 'react-native'\nimport listenToKeyboardEvents from './KeyboardAwareHOC'\n\nexport default listenToKeyboardEvents(SectionList)\n"]}

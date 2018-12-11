@@ -1,0 +1,41 @@
+c000f2dce54f0a84c47014793f70c25c
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = normalizeStyle;var _lodash = _interopRequireDefault(require("lodash"));
+var _StyleNormalizer = _interopRequireDefault(require("./StyleNormalizer"));
+
+var _reactNative = require("react-native");function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}function _objectSpread(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {
+      ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+        return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+      }));
+    }ownKeys.forEach(function (key) {
+      _defineProperty(target, key, source[key]);
+    });
+  }return target;
+}function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
+  } else {
+    obj[key] = value;
+  }return obj;
+}
+
+var styleNormalizer = new _StyleNormalizer.default();
+
+function normalizeStyle(style) {
+  return _lodash.default.reduce(style, function (normalizedStyle, val, prop) {
+
+    if (_lodash.default.isPlainObject(val)) {
+      normalizedStyle[prop] = normalizeStyle(val);
+    } else if (styleNormalizer.canNormalize(prop)) {
+      normalizedStyle = _objectSpread({}, normalizedStyle, styleNormalizer.normalize(prop, val));
+    } else {
+      normalizedStyle[prop] = val;
+    }
+
+    return normalizedStyle;
+  }, {});
+}

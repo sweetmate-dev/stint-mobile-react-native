@@ -1,0 +1,285 @@
+c29c2127196003e33ffd8b94386ac36f
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+var _propTypes = _interopRequireDefault(require("prop-types"));
+var _reactNative = _interopRequireWildcard(require("react-native"));
+
+var _reactNativeIphoneXHelper = require("react-native-iphone-x-helper");var _jsxFileName = "/Users/johnamuesi/Documents/PRODUCTION/REACTNATIVE/STINT/stint/node_modules/react-native-keyboard-aware-scroll-view/lib/KeyboardAwareHOC.js";function _interopRequireWildcard(obj) {
+  if (obj && obj.__esModule) {
+    return obj;
+  } else {
+    var newObj = {};if (obj != null) {
+      for (var key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+          var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {
+            Object.defineProperty(newObj, key, desc);
+          } else {
+            newObj[key] = obj[key];
+          }
+        }
+      }
+    }newObj.default = obj;return newObj;
+  }
+}function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }return target;
+  };return _extends.apply(this, arguments);
+}function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _nonIterableRest();
+}function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance");
+}function _iterableToArrayLimit(arr, i) {
+  var _arr = [];var _n = true;var _d = false;var _e = undefined;try {
+    for (var _i = arr[typeof Symbol === "function" ? Symbol.iterator : "@@iterator"](), _s; !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;_e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }return _arr;
+}function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;
+}function _possibleConstructorReturn(self, call) {
+  if (call && (typeof call === "object" || typeof call === "function")) {
+    return call;
+  }return _assertThisInitialized(self);
+}function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }return self;
+}function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };return _getPrototypeOf(o);
+}function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);
+}function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;return o;
+  };return _setPrototypeOf(o, p);
+}
+
+var _KAM_DEFAULT_TAB_BAR_HEIGHT = (0, _reactNativeIphoneXHelper.isIphoneX)() ? 83 : 49;
+var _KAM_KEYBOARD_OPENING_TIME = 250;
+var _KAM_EXTRA_HEIGHT = 75;
+
+function listenToKeyboardEvents(ScrollableComponent) {
+  var _class, _temp;
+  return _temp = _class = function (_React$Component) {
+    _inherits(_class, _React$Component);
+
+    function _class(props) {
+      var _this;_classCallCheck(this, _class);
+      _this = _possibleConstructorReturn(this, _getPrototypeOf(_class).call(this, props));_this.getScrollResponder = function () {
+        return _this._rnkasv_keyboardView && _this._rnkasv_keyboardView.getScrollResponder();
+      };_this.scrollToPosition = function (x, y) {
+        var animated = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : true;
+        var responder = _this.getScrollResponder();
+        responder && responder.scrollResponderScrollTo({ x: x, y: y, animated: animated });
+      };_this.scrollToEnd = function () {
+        var animated = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+        var responder = _this.getScrollResponder();
+        responder && responder.scrollResponderScrollToEnd({ animated: animated });
+      };_this.scrollForExtraHeightOnAndroid = function (extraHeight) {
+        _this.scrollToPosition(0, _this.position.y + extraHeight, true);
+      };_this.scrollToFocusedInput = function (reactNode, extraHeight, keyboardOpeningTime) {
+        if (extraHeight === undefined) {
+          extraHeight = _this.props.extraHeight || 0;
+        }
+        if (keyboardOpeningTime === undefined) {
+          keyboardOpeningTime = _this.props.keyboardOpeningTime || 0;
+        }
+        setTimeout(function () {
+          if (!_this.mountedComponent) {
+            return;
+          }
+          var responder = _this.getScrollResponder();
+          responder && responder.scrollResponderScrollNativeHandleToKeyboard(reactNode, extraHeight, true);
+        }, keyboardOpeningTime);
+      };_this.scrollIntoView = function _callee(element) {
+        var options,
+            _ref,
+            _ref2,
+            parentLayout,
+            childLayout,
+            getScrollPosition,
+            _getScrollPosition,
+            x,
+            y,
+            animated,
+            _args = arguments;return regeneratorRuntime.async(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {case 0:
+                options = _args.length > 1 && _args[1] !== undefined ? _args[1] : {};if (!(!_this._rnkasv_keyboardView || !element)) {
+                  _context.next = 3;break;
+                }return _context.abrupt("return");case 3:
+                _context.next = 5;return regeneratorRuntime.awrap(Promise.all([_this._measureElement(_this._rnkasv_keyboardView), _this._measureElement(element)]));case 5:
+                _ref = _context.sent;_ref2 = _slicedToArray(_ref, 2);parentLayout = _ref2[0];childLayout = _ref2[1];
+
+                getScrollPosition = options.getScrollPosition || _this._defaultGetScrollPosition;_getScrollPosition = getScrollPosition(parentLayout, childLayout, _this.position), x = _getScrollPosition.x, y = _getScrollPosition.y, animated = _getScrollPosition.animated;
+                _this.scrollToPosition(x, y, animated);case 12:case "end":
+                return _context.stop();}
+          }
+        }, null, this);
+      };_this._defaultGetScrollPosition = function (parentLayout, childLayout, contentOffset) {
+        return {
+          x: 0,
+          y: Math.max(0, childLayout.y - parentLayout.y + contentOffset.y),
+          animated: true };
+      };_this._measureElement = function (element) {
+        var node = (0, _reactNative.findNodeHandle)(element);
+        return new Promise(function (resolve) {
+          _reactNative.UIManager.measureInWindow(node, function (x, y, width, height) {
+            resolve({ x: x, y: y, width: width, height: height });
+          });
+        });
+      };_this._updateKeyboardSpace = function (frames) {
+
+        if (_this.props.enableAutomaticScroll) {
+          var keyboardSpace = frames.endCoordinates.height + _this.props.extraScrollHeight;
+          if (_this.props.viewIsInsideTabBar) {
+            keyboardSpace -= _KAM_DEFAULT_TAB_BAR_HEIGHT;
+          }
+          _this.setState({ keyboardSpace: keyboardSpace });
+          var currentlyFocusedField = _reactNative.TextInput.State.currentlyFocusedField();
+          var responder = _this.getScrollResponder();
+          if (!currentlyFocusedField || !responder) {
+            return;
+          }
+          _reactNative.UIManager.viewIsDescendantOf(currentlyFocusedField, responder.getInnerViewNode(), function (isAncestor) {
+            if (isAncestor) {
+
+              _reactNative.UIManager.measureInWindow(currentlyFocusedField, function (x, y, width, height) {
+                var textInputBottomPosition = y + height;
+                var keyboardPosition = frames.endCoordinates.screenY;
+                var totalExtraHeight = _this.props.extraScrollHeight + _this.props.extraHeight;
+                if (_reactNative.Platform.OS === 'ios') {
+                  if (textInputBottomPosition > keyboardPosition - totalExtraHeight) {
+                    _this._scrollToFocusedInputWithNodeHandle(currentlyFocusedField);
+                  }
+                } else {
+
+                  if (textInputBottomPosition > keyboardPosition) {
+
+                    keyboardSpace = keyboardSpace - (textInputBottomPosition - keyboardPosition);
+                    _this.setState({ keyboardSpace: keyboardSpace });
+                    _this.scrollForExtraHeightOnAndroid(totalExtraHeight);
+                  } else if (textInputBottomPosition > keyboardPosition - totalExtraHeight) {
+                    _this.scrollForExtraHeightOnAndroid(totalExtraHeight - (keyboardPosition - textInputBottomPosition));
+                  }
+                }
+              });
+            }
+          });
+        }
+        if (!_this.resetCoords) {
+          if (!_this.defaultResetScrollToCoords) {
+            _this.defaultResetScrollToCoords = _this.position;
+          }
+        }
+      };_this._resetKeyboardSpace = function () {
+        var keyboardSpace = _this.props.viewIsInsideTabBar ? _KAM_DEFAULT_TAB_BAR_HEIGHT + _this.props.extraScrollHeight || 0 : _this.props.extraScrollHeight || 0;
+        _this.setState({ keyboardSpace: keyboardSpace });
+
+        if (_this.props.enableResetScrollToCoords === false) {
+          _this.defaultResetScrollToCoords = null;
+          return;
+        } else if (_this.resetCoords) {
+          _this.scrollToPosition(_this.resetCoords.x, _this.resetCoords.y, true);
+        } else {
+          if (_this.defaultResetScrollToCoords) {
+            _this.scrollToPosition(_this.defaultResetScrollToCoords.x, _this.defaultResetScrollToCoords.y, true);
+
+            _this.defaultResetScrollToCoords = null;
+          } else {
+            _this.scrollToPosition(0, 0, true);
+          }
+        }
+      };_this._scrollToFocusedInputWithNodeHandle = function (nodeID, extraHeight, keyboardOpeningTime) {
+        if (extraHeight === undefined) {
+          extraHeight = _this.props.extraHeight;
+        }
+        var reactNode = _reactNative.default.findNodeHandle(nodeID);
+        _this.scrollToFocusedInput(reactNode, extraHeight + _this.props.extraScrollHeight, keyboardOpeningTime !== undefined ? keyboardOpeningTime : _this.props.keyboardOpeningTime || 0);
+      };_this._handleOnScroll = function (e) {
+        _this.position = e.nativeEvent.contentOffset;
+      };_this._handleRef = function (ref) {
+        _this._rnkasv_keyboardView = ref;
+        if (_this.props.innerRef) {
+          _this.props.innerRef(_this._rnkasv_keyboardView);
+        }
+      };_this._onScroll = function (e) {
+        _this._handleOnScroll(e);
+        _this.props.onScroll && _this.props.onScroll(e);
+      };_this.keyboardWillShowEvent = undefined;_this.keyboardWillHideEvent = undefined;_this.position = { x: 0, y: 0 };_this.defaultResetScrollToCoords = null;var _keyboardSpace = props.viewIsInsideTabBar ? _KAM_DEFAULT_TAB_BAR_HEIGHT : 0;_this.state = { keyboardSpace: _keyboardSpace };return _this;
+    }_createClass(_class, [{ key: "componentDidMount", value: function componentDidMount() {
+        this.mountedComponent = true;if (_reactNative.Platform.OS === 'ios') {
+          this.keyboardWillShowEvent = _reactNative.Keyboard.addListener('keyboardWillShow', this._updateKeyboardSpace);this.keyboardWillHideEvent = _reactNative.Keyboard.addListener('keyboardWillHide', this._resetKeyboardSpace);
+        } else if (_reactNative.Platform.OS === 'android' && this.props.enableOnAndroid) {
+          this.keyboardWillShowEvent = _reactNative.Keyboard.addListener('keyboardDidShow', this._updateKeyboardSpace);this.keyboardWillHideEvent = _reactNative.Keyboard.addListener('keyboardDidHide', this._resetKeyboardSpace);
+        }
+      } }, { key: "componentWillReceiveProps", value: function componentWillReceiveProps(nextProps) {
+        if (nextProps.viewIsInsideTabBar !== this.props.viewIsInsideTabBar) {
+          var keyboardSpace = nextProps.viewIsInsideTabBar ? _KAM_DEFAULT_TAB_BAR_HEIGHT : 0;if (this.state.keyboardSpace !== keyboardSpace) {
+            this.setState({ keyboardSpace: keyboardSpace });
+          }
+        }
+      } }, { key: "componentWillUnmount", value: function componentWillUnmount() {
+        this.mountedComponent = false;this.keyboardWillShowEvent && this.keyboardWillShowEvent.remove();this.keyboardWillHideEvent && this.keyboardWillHideEvent.remove();
+      } }, { key: "render", value: function render() {
+        var _this$props = this.props,
+            enableOnAndroid = _this$props.enableOnAndroid,
+            contentContainerStyle = _this$props.contentContainerStyle;
+        var newContentContainerStyle;
+        if (_reactNative.Platform.OS === 'android' && enableOnAndroid) {
+          newContentContainerStyle = [].concat(contentContainerStyle).concat({
+            paddingBottom: ((contentContainerStyle || {}).paddingBottom || 0) + this.state.keyboardSpace });
+        }
+        return _react.default.createElement(ScrollableComponent, _extends({
+          ref: this._handleRef,
+          keyboardDismissMode: "interactive",
+          contentInset: { bottom: this.state.keyboardSpace },
+          automaticallyAdjustContentInsets: false,
+          showsVerticalScrollIndicator: true,
+          scrollEventThrottle: 1 }, this.props, {
+          contentContainerStyle: newContentContainerStyle || contentContainerStyle,
+
+          keyboardSpace: this.state.keyboardSpace,
+          getScrollResponder: this.getScrollResponder,
+          scrollToPosition: this.scrollToPosition,
+          scrollToEnd: this.scrollToEnd,
+          scrollForExtraHeightOnAndroid: this.scrollForExtraHeightOnAndroid,
+          scrollToFocusedInput: this.scrollToFocusedInput,
+          resetKeyboardSpace: this._resetKeyboardSpace,
+          handleOnScroll: this._handleOnScroll,
+          onScroll: this._onScroll, __source: { fileName: _jsxFileName, lineNumber: 397 } }));
+      } }]);return _class;
+  }(_react.default.Component), _class.propTypes = { viewIsInsideTabBar: _propTypes.default.bool, resetScrollToCoords: _propTypes.default.shape({ x: _propTypes.default.number.isRequired, y: _propTypes.default.number.isRequired }), enableResetScrollToCoords: _propTypes.default.bool, enableAutomaticScroll: _propTypes.default.bool, extraHeight: _propTypes.default.number, extraScrollHeight: _propTypes.default.number, keyboardOpeningTime: _propTypes.default.number, onScroll: _propTypes.default.func, contentContainerStyle: _propTypes.default.any, enableOnAndroid: _propTypes.default.bool, innerRef: _propTypes.default.func }, _class.defaultProps = { enableAutomaticScroll: true, extraHeight: _KAM_EXTRA_HEIGHT, extraScrollHeight: 0, enableResetScrollToCoords: true, keyboardOpeningTime: _KAM_KEYBOARD_OPENING_TIME, viewIsInsideTabBar: false }, _temp;
+}var _default = listenToKeyboardEvents;exports.default = _default;

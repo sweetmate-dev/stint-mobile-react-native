@@ -1,0 +1,28 @@
+6d10e77586ef3c565571f7f0d8714869
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true });
+
+exports['default'] = getAdapter;
+
+var _validateAdapter2 = _interopRequireDefault(require('./validateAdapter'));
+
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { 'default': obj };
+}
+
+function getAdapter() {
+  var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+
+  if (options.adapter) {
+    (0, _validateAdapter2['default'])(options.adapter);
+    return options.adapter;
+  }
+
+  var _get = (0, require('./configuration').get)(),
+      adapter = _get.adapter;
+
+  (0, _validateAdapter2['default'])(adapter);
+  return adapter;
+}

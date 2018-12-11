@@ -1,0 +1,9 @@
+6121d297693f5ed28d6d199965e89095
+
+
+function map(collection, iteratee) {
+  var func = require('./isArray')(collection) ? require('./_arrayMap') : require('./_baseMap');
+  return func(collection, require('./_baseIteratee')(iteratee, 3));
+}
+
+module.exports = map;

@@ -1,0 +1,15 @@
+966f543fe4f4e6dbd3de5cd43c224fd3
+'use strict';
+
+module.exports = require('./core.js');
+require('./core.js').prototype['finally'] = function (f) {
+  return this.then(function (value) {
+    return require('./core.js').resolve(f()).then(function () {
+      return value;
+    });
+  }, function (err) {
+    return require('./core.js').resolve(f()).then(function () {
+      throw err;
+    });
+  });
+};

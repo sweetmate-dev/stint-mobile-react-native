@@ -1,0 +1,62 @@
+f3c1d9713baf1482568f06951280fb18
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();
+
+var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _reactNative = require('react-native');
+var _computeProps = require('../Utils/computeProps');var _computeProps2 = _interopRequireDefault(_computeProps);
+var _Col = require('./Col');var _Col2 = _interopRequireDefault(_Col);
+var _Row = require('./Row');var _Row2 = _interopRequireDefault(_Row);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _possibleConstructorReturn(self, call) {if (!self) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return call && (typeof call === "object" || typeof call === "function") ? call : self;}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } });if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;}var
+
+
+GridNB = function (_Component) {_inherits(GridNB, _Component);function GridNB() {_classCallCheck(this, GridNB);return _possibleConstructorReturn(this, (GridNB.__proto__ || Object.getPrototypeOf(GridNB)).apply(this, arguments));}_createClass(GridNB, [{ key: 'prepareRootProps', value: function prepareRootProps()
+    {
+
+      var type = {
+        flex: 1,
+        flexDirection: this.ifRow() ? 'column' : 'row' };
+
+
+      var defaultProps = {
+        style: type };
+
+
+      return (0, _computeProps2.default)(this.props, defaultProps);
+
+    } }, { key: 'ifRow', value: function ifRow()
+
+    {
+      var row = false;
+      _react2.default.Children.forEach(this.props.children, function (child) {
+        if (child && child.type == _Row2.default)
+        row = true;
+      });
+      return row;
+    } }, { key: 'setNativeProps', value: function setNativeProps(
+
+    nativeProps) {
+      this._root.setNativeProps(nativeProps);
+    } }, { key: 'render', value: function render()
+
+    {var _this2 = this;
+      if (this.props.onPress) {
+        return (
+          _react2.default.createElement(_reactNative.TouchableOpacity, { onPress: this.props.onPress },
+            _react2.default.createElement(_reactNative.View, _extends({
+                ref: function ref(component) {return _this2._root = component;} },
+              this.props,
+              this.prepareRootProps()),
+              this.props.children)));
+
+
+      } else
+      {
+        return (
+          _react2.default.createElement(_reactNative.View, _extends({
+              ref: function ref(component) {return _this2._root = component;} },
+            this.props,
+            this.prepareRootProps()),
+            this.props.children));
+
+      }
+    } }]);return GridNB;}(_react.Component);exports.default = GridNB;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIkdyaWQuanMiXSwibmFtZXMiOlsiR3JpZE5CIiwidHlwZSIsImZsZXgiLCJmbGV4RGlyZWN0aW9uIiwiaWZSb3ciLCJkZWZhdWx0UHJvcHMiLCJzdHlsZSIsInByb3BzIiwicm93IiwiUmVhY3QiLCJDaGlsZHJlbiIsImZvckVhY2giLCJjaGlsZHJlbiIsImNoaWxkIiwiUm93IiwibmF0aXZlUHJvcHMiLCJfcm9vdCIsInNldE5hdGl2ZVByb3BzIiwib25QcmVzcyIsImNvbXBvbmVudCIsInByZXBhcmVSb290UHJvcHMiLCJDb21wb25lbnQiXSwibWFwcGluZ3MiOiJBQUFBLGE7O0FBRUEsOEI7QUFDQTtBQUNBLHFEO0FBQ0EsNEI7QUFDQSw0Qjs7O0FBR3FCQSxNO0FBQ0U7O0FBRWYsVUFBSUMsT0FBTztBQUNQQyxjQUFNLENBREM7QUFFUEMsdUJBQWUsS0FBS0MsS0FBTCxLQUFlLFFBQWYsR0FBMEIsS0FGbEMsRUFBWDs7O0FBS0EsVUFBSUMsZUFBZTtBQUNmQyxlQUFPTCxJQURRLEVBQW5COzs7QUFJQSxhQUFPLDRCQUFhLEtBQUtNLEtBQWxCLEVBQXlCRixZQUF6QixDQUFQOztBQUVILEs7O0FBRU87QUFDSixVQUFJRyxNQUFNLEtBQVY7QUFDQUMsc0JBQU1DLFFBQU4sQ0FBZUMsT0FBZixDQUF1QixLQUFLSixLQUFMLENBQVdLLFFBQWxDLEVBQTRDLFVBQVVDLEtBQVYsRUFBaUI7QUFDekQsWUFBR0EsU0FBU0EsTUFBTVosSUFBTixJQUFjYSxhQUExQjtBQUNJTixjQUFNLElBQU47QUFDUCxPQUhEO0FBSUEsYUFBT0EsR0FBUDtBQUNILEs7O0FBRWNPLGUsRUFBYTtBQUMxQixXQUFLQyxLQUFMLENBQVdDLGNBQVgsQ0FBMEJGLFdBQTFCO0FBQ0QsSzs7QUFFTTtBQUNQLFVBQUcsS0FBS1IsS0FBTCxDQUFXVyxPQUFkLEVBQXNCO0FBQ3BCO0FBQ0Usd0NBQUMsNkJBQUQsSUFBa0IsU0FBUyxLQUFLWCxLQUFMLENBQVdXLE9BQXRDO0FBQ0osMENBQUMsaUJBQUQ7QUFDRSxxQkFBSyxnQ0FBYSxPQUFLRixLQUFMLEdBQWFHLFNBQTFCLEVBRFA7QUFFTSxtQkFBS1osS0FGWDtBQUdNLG1CQUFLYSxnQkFBTCxFQUhOO0FBSUUsbUJBQUtiLEtBQUwsQ0FBV0ssUUFKYixDQURJLENBREY7OztBQVNELE9BVkQ7QUFXSTtBQUNGO0FBQ0Usd0NBQUMsaUJBQUQ7QUFDRixtQkFBSyxnQ0FBYSxPQUFLSSxLQUFMLEdBQWFHLFNBQTFCLEVBREg7QUFFRSxpQkFBS1osS0FGUDtBQUdFLGlCQUFLYSxnQkFBTCxFQUhGO0FBSUYsaUJBQUtiLEtBQUwsQ0FBV0ssUUFKVCxDQURGOztBQU9EO0FBQ0YsSyxxQkFsRGlDUyxnQixvQkFBZnJCLE0iLCJmaWxlIjoiR3JpZC5qcyIsInNvdXJjZXNDb250ZW50IjpbIid1c2Ugc3RyaWN0JztcblxuaW1wb3J0IFJlYWN0LCB7Q29tcG9uZW50fSBmcm9tICdyZWFjdCc7XG5pbXBvcnQge1ZpZXcsIFRvdWNoYWJsZU9wYWNpdHl9IGZyb20gJ3JlYWN0LW5hdGl2ZSc7XG5pbXBvcnQgY29tcHV0ZVByb3BzIGZyb20gJy4uL1V0aWxzL2NvbXB1dGVQcm9wcyc7XG5pbXBvcnQgQ29sIGZyb20gJy4vQ29sJztcbmltcG9ydCBSb3cgZnJvbSAnLi9Sb3cnO1xuXG5cbmV4cG9ydCBkZWZhdWx0IGNsYXNzIEdyaWROQiBleHRlbmRzIENvbXBvbmVudCB7XG4gICAgcHJlcGFyZVJvb3RQcm9wcygpIHtcblxuICAgICAgICB2YXIgdHlwZSA9IHtcbiAgICAgICAgICAgIGZsZXg6IDEsXG4gICAgICAgICAgICBmbGV4RGlyZWN0aW9uOiB0aGlzLmlmUm93KCkgPyAnY29sdW1uJyA6ICdyb3cnXG4gICAgICAgIH1cblxuICAgICAgICB2YXIgZGVmYXVsdFByb3BzID0ge1xuICAgICAgICAgICAgc3R5bGU6IHR5cGVcbiAgICAgICAgfVxuXG4gICAgICAgIHJldHVybiBjb21wdXRlUHJvcHModGhpcy5wcm9wcywgZGVmYXVsdFByb3BzKTtcblxuICAgIH1cblxuICAgIGlmUm93KCkge1xuICAgICAgICB2YXIgcm93ID0gZmFsc2U7XG4gICAgICAgIFJlYWN0LkNoaWxkcmVuLmZvckVhY2godGhpcy5wcm9wcy5jaGlsZHJlbiwgZnVuY3Rpb24gKGNoaWxkKSB7XG4gICAgICAgICAgICBpZihjaGlsZCAmJiBjaGlsZC50eXBlID09IFJvdylcbiAgICAgICAgICAgICAgICByb3cgPSB0cnVlO1xuICAgICAgICB9KVxuICAgICAgICByZXR1cm4gcm93O1xuICAgIH1cblxuICAgIHNldE5hdGl2ZVByb3BzKG5hdGl2ZVByb3BzKSB7XG4gICAgICB0aGlzLl9yb290LnNldE5hdGl2ZVByb3BzKG5hdGl2ZVByb3BzKTtcbiAgICB9XG5cbiAgcmVuZGVyKCkge1xuICAgIGlmKHRoaXMucHJvcHMub25QcmVzcyl7XG4gICAgICByZXR1cm4oXG4gICAgICAgIDxUb3VjaGFibGVPcGFjaXR5IG9uUHJlc3M9e3RoaXMucHJvcHMub25QcmVzc30+XG4gICAgPFZpZXdcbiAgICAgIHJlZj17Y29tcG9uZW50ID0+IHRoaXMuX3Jvb3QgPSBjb21wb25lbnR9XG4gICAgICB7Li4udGhpcy5wcm9wc31cbiAgICAgIHsuLi50aGlzLnByZXBhcmVSb290UHJvcHMoKX1cbiAgICA+e3RoaXMucHJvcHMuY2hpbGRyZW59PC9WaWV3PlxuICAgICAgPC9Ub3VjaGFibGVPcGFjaXR5PlxuICAgICk7XG4gICAgfVxuICAgIGVsc2V7XG4gICAgICByZXR1cm4oXG4gICAgICAgIDxWaWV3XG4gICAgICByZWY9e2NvbXBvbmVudCA9PiB0aGlzLl9yb290ID0gY29tcG9uZW50fVxuICAgICAgey4uLnRoaXMucHJvcHN9XG4gICAgICB7Li4udGhpcy5wcmVwYXJlUm9vdFByb3BzKCl9XG4gICAgPnt0aGlzLnByb3BzLmNoaWxkcmVufTwvVmlldz5cbiAgICApO1xuICAgIH1cbiAgfVxuXG59XG4iXX0=

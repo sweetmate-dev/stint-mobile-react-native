@@ -1,0 +1,67 @@
+429e3fe7781ca9c5a4ea2b98a8942b91
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = exports.BOTTOM_LEFT = exports.TOP_LEFT = exports.BOTTOM_RIGHT = exports.TOP_RIGHT = exports.BOTTOM = exports.TOP = exports.RIGHT = exports.LEFT = exports.VERTICAL = exports.HORIZONTAL = exports.CORNERS = exports.SIDES = void 0;var _lodash = _interopRequireDefault(require("lodash"));function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });
+  } else {
+    obj[key] = value;
+  }return obj;
+}function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;
+}
+
+var createShorthand = function createShorthand(name, type) {
+  return { name: name, type: _lodash.default.isUndefined(type) ? name : type };
+};
+
+var SIDES = createShorthand('Sides', '');exports.SIDES = SIDES;
+var CORNERS = createShorthand('Corners', '');exports.CORNERS = CORNERS;
+var HORIZONTAL = createShorthand('Horizontal');exports.HORIZONTAL = HORIZONTAL;
+var VERTICAL = createShorthand('Vertical');exports.VERTICAL = VERTICAL;
+
+var LEFT = 'Left';exports.LEFT = LEFT;
+var RIGHT = 'Right';exports.RIGHT = RIGHT;
+var TOP = 'Top';exports.TOP = TOP;
+var BOTTOM = 'Bottom';exports.BOTTOM = BOTTOM;
+var TOP_RIGHT = 'TopRight';exports.TOP_RIGHT = TOP_RIGHT;
+var BOTTOM_RIGHT = 'BottomRight';exports.BOTTOM_RIGHT = BOTTOM_RIGHT;
+var TOP_LEFT = 'TopLeft';exports.TOP_LEFT = TOP_LEFT;
+var BOTTOM_LEFT = 'BottomLeft';exports.BOTTOM_LEFT = BOTTOM_LEFT;var ShorthandsNormalizerFactory = function () {
+  function ShorthandsNormalizerFactory() {
+    var _this$createNormalize;_classCallCheck(this, ShorthandsNormalizerFactory);
+    this.createNormalizersMap = (_this$createNormalize = {}, _defineProperty(_this$createNormalize, SIDES.name, this.createAllSidesNormalizer), _defineProperty(_this$createNormalize, CORNERS.name, this.createAllCornersNormalizer), _defineProperty(_this$createNormalize, HORIZONTAL.name, this.createHorizontalSidesNormalizer), _defineProperty(_this$createNormalize, VERTICAL.name, this.createVerticalSidesNormalizer), _this$createNormalize);
+  }_createClass(ShorthandsNormalizerFactory, [{ key: "createAllSidesNormalizer", value: function createAllSidesNormalizer(prop, shorthand) {
+      var suffix = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+      return function (val) {
+        var _ref;return _ref = {}, _defineProperty(_ref, prop + LEFT + suffix, val), _defineProperty(_ref, prop + RIGHT + suffix, val), _defineProperty(_ref, prop + TOP + suffix, val), _defineProperty(_ref, prop + BOTTOM + suffix, val), _ref;
+      };
+    } }, { key: "createAllCornersNormalizer", value: function createAllCornersNormalizer(prop, shorthand) {
+      var suffix = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+      return function (val) {
+        var _ref2;return _ref2 = {}, _defineProperty(_ref2, prop + BOTTOM_LEFT + suffix, val), _defineProperty(_ref2, prop + BOTTOM_RIGHT + suffix, val), _defineProperty(_ref2, prop + TOP_LEFT + suffix, val), _defineProperty(_ref2, prop + TOP_RIGHT + suffix, val), _ref2;
+      };
+    } }, { key: "createHorizontalSidesNormalizer", value: function createHorizontalSidesNormalizer(prop) {
+      return function (val) {
+        var _ref3;return _ref3 = {}, _defineProperty(_ref3, prop + LEFT, val), _defineProperty(_ref3, prop + RIGHT, val), _ref3;
+      };
+    } }, { key: "createVerticalSidesNormalizer", value: function createVerticalSidesNormalizer(prop) {
+      return function (val) {
+        var _ref4;return _ref4 = {}, _defineProperty(_ref4, prop + TOP, val), _defineProperty(_ref4, prop + BOTTOM, val), _ref4;
+      };
+    } }, { key: "getNormalizerCreator", value: function getNormalizerCreator(shorthand) {
+      return this.createNormalizersMap[shorthand.name];
+    } }, { key: "createNormalizer", value: function createNormalizer(prop, shorthand, suffix) {
+      var normalizerCreator = this.getNormalizerCreator(shorthand);
+      return normalizerCreator(prop, shorthand, suffix);
+    } }]);return ShorthandsNormalizerFactory;
+}();var _default = new ShorthandsNormalizerFactory();exports.default = _default;

@@ -1,0 +1,13 @@
+3c29d3f709b7a80072a3fe06fd0e6ae6
+
+
+'use strict';
+
+module.exports = {
+  AccessibilityTraits: ['none', 'button', 'link', 'header', 'search', 'image', 'selected', 'plays', 'key', 'text', 'summary', 'disabled', 'frequentUpdates', 'startsMedia', 'adjustable', 'allowsDirectInteraction', 'pageTurn'],
+
+  AccessibilityComponentTypes: ['none', 'button', 'radiobutton_checked', 'radiobutton_unchecked'],
+
+  AccessibilityRoles: ['none', 'button', 'link', 'search', 'image', 'keyboardkey', 'text', 'adjustable', 'imagebutton', 'header', 'summary'],
+
+  AccessibilityStates: ['selected', 'disabled'] };

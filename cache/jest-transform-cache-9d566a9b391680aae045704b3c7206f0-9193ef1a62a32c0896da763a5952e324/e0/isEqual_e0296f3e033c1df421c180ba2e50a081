@@ -1,0 +1,8 @@
+cf845ca5a7c19d55206e05e6ea0032e3
+
+
+function isEqual(value, other) {
+  return require('./_baseIsEqual')(value, other);
+}
+
+module.exports = isEqual;

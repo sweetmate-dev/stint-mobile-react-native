@@ -1,0 +1,8 @@
+f69f543dd564307ea9a36dfdb719fb4a
+
+
+'use strict';
+
+var NativeViewComponent = require('requireNativeComponent')('RCTView');
+
+module.exports = NativeViewComponent;

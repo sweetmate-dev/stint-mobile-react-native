@@ -1,0 +1,12 @@
+73b60f933a2e7af1581a3bded4d77dbf
+
+
+'use strict';
+
+var BatchedBridge = new (require('MessageQueue'))();
+
+Object.defineProperty(global, '__fbBatchedBridge', {
+  configurable: true,
+  value: BatchedBridge });
+
+module.exports = BatchedBridge;

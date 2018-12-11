@@ -1,0 +1,101 @@
+04d1cf663950339315859d4c77a4a1c5
+
+
+
+
+
+
+
+
+
+
+'use strict';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports = {
+  AccessibilityTraits: [
+  'none',
+  'button',
+  'link',
+  'header',
+  'search',
+  'image',
+  'selected',
+  'plays',
+  'key',
+  'text',
+  'summary',
+  'disabled',
+  'frequentUpdates',
+  'startsMedia',
+  'adjustable',
+  'allowsDirectInteraction',
+  'pageTurn'],
+
+  AccessibilityComponentTypes: [
+  'none',
+  'button',
+  'radiobutton_checked',
+  'radiobutton_unchecked'],
+
+  AccessibilityRoles: [
+  'none',
+  'button',
+  'link',
+  'search',
+  'image',
+  'keyboardkey',
+  'text',
+  'adjustable',
+  'imagebutton',
+  'header',
+  'summary'],
+
+  AccessibilityStates: ['selected', 'disabled'] };

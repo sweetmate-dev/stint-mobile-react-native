@@ -1,0 +1,9 @@
+bcb82c6355479687c4c4b145e9d6badd
+
+
+function reject(collection, predicate) {
+  var func = require('./isArray')(collection) ? require('./_arrayFilter') : require('./_baseFilter');
+  return func(collection, require('./negate')(require('./_baseIteratee')(predicate, 3)));
+}
+
+module.exports = reject;

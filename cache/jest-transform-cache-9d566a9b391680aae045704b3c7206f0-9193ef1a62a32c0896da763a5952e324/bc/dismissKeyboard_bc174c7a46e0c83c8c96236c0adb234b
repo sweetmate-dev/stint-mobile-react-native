@@ -1,0 +1,10 @@
+d0962cd59b0ae8be8e8763ab1029a5aa
+
+
+'use strict';
+
+function dismissKeyboard() {
+  require('TextInputState').blurTextInput(require('TextInputState').currentlyFocusedField());
+}
+
+module.exports = dismissKeyboard;

@@ -1,0 +1,9 @@
+4253c3a02b1cfdb73643e072ee2c5491
+
+var MAX_SAFE_INTEGER = 9007199254740991;
+
+function isLength(value) {
+  return typeof value == 'number' && value > -1 && value % 1 == 0 && value <= MAX_SAFE_INTEGER;
+}
+
+module.exports = isLength;

@@ -1,0 +1,61 @@
+df14bca520c131cc2b43c6e5447b01f8
+
+
+
+
+
+
+
+
+
+'use strict';var _jsxFileName = "/Users/johnamuesi/Documents/PRODUCTION/REACTNATIVE/STINT/stint/node_modules/react-native/Libraries/Lists/ListView/__mocks__/ListViewMock.js";function _extends() {_extends = Object.assign || function (target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i];for (var key in source) {if (Object.prototype.hasOwnProperty.call(source, key)) {target[key] = source[key];}}}return target;};return _extends.apply(this, arguments);}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}}function _defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}function _createClass(Constructor, protoProps, staticProps) {if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;}function _possibleConstructorReturn(self, call) {if (call && (typeof call === "object" || typeof call === "function")) {return call;}return _assertThisInitialized(self);}function _assertThisInitialized(self) {if (self === void 0) {throw new ReferenceError("this hasn't been initialised - super() hasn't been called");}return self;}function _getPrototypeOf(o) {_getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {return o.__proto__ || Object.getPrototypeOf(o);};return _getPrototypeOf(o);}function _inherits(subClass, superClass) {if (typeof superClass !== "function" && superClass !== null) {throw new TypeError("Super expression must either be null or a function");}subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } });if (superClass) _setPrototypeOf(subClass, superClass);}function _setPrototypeOf(o, p) {_setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {o.__proto__ = p;return o;};return _setPrototypeOf(o, p);}var
+
+
+
+
+
+
+ListViewMock = function (_React$Component) {_inherits(ListViewMock, _React$Component);function ListViewMock() {_classCallCheck(this, ListViewMock);return _possibleConstructorReturn(this, _getPrototypeOf(ListViewMock).apply(this, arguments));}_createClass(ListViewMock, [{ key: "componentDidMount", value: function componentDidMount()
+
+
+
+
+
+
+
+
+
+    {
+      ListViewMock.latestRef = this;
+    } }, { key: "render", value: function render()
+    {var _this$props =
+      this.props,dataSource = _this$props.dataSource,renderFooter = _this$props.renderFooter,renderHeader = _this$props.renderHeader;
+      var rows = [renderHeader && renderHeader()];
+      var allRowIDs = dataSource.rowIdentities;
+      for (var sectionIdx = 0; sectionIdx < allRowIDs.length; sectionIdx++) {
+        var sectionID = dataSource.sectionIdentities[sectionIdx];
+        var rowIDs = allRowIDs[sectionIdx];
+        for (var rowIdx = 0; rowIdx < rowIDs.length; rowIdx++) {
+          var rowID = rowIDs[rowIdx];
+
+          rows.push(
+          require('React').createElement(require('StaticRenderer'), {
+            key: 'section_' + sectionID + '_row_' + rowID,
+            shouldUpdate: true,
+            render: this.props.renderRow.bind(
+            null,
+            dataSource.getRowData(sectionIdx, rowIdx),
+            sectionID,
+            rowID), __source: { fileName: _jsxFileName, lineNumber: 41 } }));
+
+
+
+        }
+      }
+      renderFooter && rows.push(renderFooter());
+      return this.props.renderScrollComponent(_objectSpread({}, this.props, { children: rows }));
+    } }]);return ListViewMock;}(require('React').Component);ListViewMock.defaultProps = { renderScrollComponent: function renderScrollComponent(props) {return require('React').createElement(require('ScrollView'), _extends({}, props, { __source: { fileName: _jsxFileName, lineNumber: 25 } }));} };ListViewMock.
+DataSource = require('ListViewDataSource');
+
+
+module.exports = ListViewMock;

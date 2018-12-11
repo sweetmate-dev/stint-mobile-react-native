@@ -1,0 +1,8 @@
+0725ee903dd6b9e3fb82bbdbf560551b
+
+
+function omitBy(object, predicate) {
+  return require('./pickBy')(object, require('./negate')(require('./_baseIteratee')(predicate)));
+}
+
+module.exports = omitBy;

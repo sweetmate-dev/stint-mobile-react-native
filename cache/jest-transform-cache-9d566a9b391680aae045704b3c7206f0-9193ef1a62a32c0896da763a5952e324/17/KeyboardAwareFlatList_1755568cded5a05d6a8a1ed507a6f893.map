@@ -1,0 +1,1 @@
+{"version":3,"sources":["KeyboardAwareFlatList.js"],"names":["FlatList"],"mappings":";;AAEA;AACA,sD;;AAEe,gCAAuBA,qBAAvB,C","file":"KeyboardAwareFlatList.js","sourcesContent":["/* @flow */\n\nimport { FlatList } from 'react-native'\nimport listenToKeyboardEvents from './KeyboardAwareHOC'\n\nexport default listenToKeyboardEvents(FlatList)\n"]}

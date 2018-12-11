@@ -1,0 +1,8 @@
+b14f497af10d4b30b460099c55359ed4
+
+
+var assignIn = require('./_createAssigner')(function (object, source) {
+  require('./_copyObject')(source, require('./keysIn')(source), object);
+});
+
+module.exports = assignIn;

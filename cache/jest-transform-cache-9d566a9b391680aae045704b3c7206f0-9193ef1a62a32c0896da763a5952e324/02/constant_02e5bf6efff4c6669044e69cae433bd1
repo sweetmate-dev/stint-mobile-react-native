@@ -1,0 +1,10 @@
+a33ff84367396b427e625f48cc4d6d6f
+
+
+function constant(value) {
+  return function () {
+    return value;
+  };
+}
+
+module.exports = constant;

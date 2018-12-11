@@ -1,0 +1,8 @@
+c9b87801de2be22f4ba6d29483b16dba
+var $isNaN = Number.isNaN || function (a) {
+  return a !== a;
+};
+
+module.exports = Number.isFinite || function (x) {
+  return typeof x === 'number' && !$isNaN(x) && x !== Infinity && x !== -Infinity;
+};

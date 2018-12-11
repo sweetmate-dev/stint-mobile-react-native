@@ -1,0 +1,4 @@
+19b0f00326832ff6da3ba19d4196a8ee
+module.exports = Number.isNaN || function isNaN(a) {
+	return a !== a;
+};

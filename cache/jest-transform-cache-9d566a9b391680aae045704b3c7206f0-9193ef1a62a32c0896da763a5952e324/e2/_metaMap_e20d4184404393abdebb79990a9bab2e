@@ -1,0 +1,7 @@
+af13fb2c7ffd86b25531e4b8ee1fe822
+var WeakMap = require('./_WeakMap');
+
+/** Used to store function metadata. */
+var metaMap = WeakMap && new WeakMap();
+
+module.exports = metaMap;

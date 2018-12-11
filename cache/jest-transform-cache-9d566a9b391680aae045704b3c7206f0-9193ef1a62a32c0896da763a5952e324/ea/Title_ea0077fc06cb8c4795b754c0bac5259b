@@ -1,0 +1,6 @@
+1b6180c37c0a855f62e4206607417a24
+Object.defineProperty(exports, "__esModule", { value: true });var _platform2 = _interopRequireDefault(require("./../variables/platform"));function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}exports.default = function () {
+  var variables = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _platform2.default;var titleTheme = { fontSize: variables.titleFontSize, fontFamily: variables.titleFontfamily, color: variables.titleFontColor, fontWeight: require("react-native").Platform.OS === "ios" ? "700" : undefined, textAlign: "center", paddingLeft: require("react-native").Platform.OS === "ios" ? 4 : 0, marginLeft: require("react-native").Platform.OS === "ios" ? undefined : -3, paddingTop: 1 };return titleTheme;
+};

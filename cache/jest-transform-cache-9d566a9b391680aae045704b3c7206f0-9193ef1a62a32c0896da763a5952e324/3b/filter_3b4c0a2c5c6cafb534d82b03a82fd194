@@ -1,0 +1,9 @@
+c0ac267cfc749e77afd7352c629afb52
+
+
+function filter(collection, predicate) {
+  var func = require('./isArray')(collection) ? require('./_arrayFilter') : require('./_baseFilter');
+  return func(collection, require('./_baseIteratee')(predicate, 3));
+}
+
+module.exports = filter;

@@ -1,0 +1,389 @@
+1d7bc33b6546383df90c98299a3601fb
+
+
+
+
+
+
+
+
+
+'use strict';var _jsxFileName = "/Users/johnamuesi/Documents/PRODUCTION/REACTNATIVE/STINT/stint/node_modules/react-native/Libraries/Components/Touchable/TouchableHighlight.js";function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var DEFAULT_PROPS = {
+  activeOpacity: 0.85,
+  delayPressOut: 100,
+  underlayColor: 'black' };
+
+
+var PRESS_RETENTION_OFFSET = { top: 20, left: 20, right: 20, bottom: 30 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var TouchableHighlight = require('create-react-class')({
+  displayName: 'TouchableHighlight',
+  propTypes: _objectSpread({},
+  require('TouchableWithoutFeedback').propTypes, {
+
+
+
+
+    activeOpacity: require('prop-types').number,
+
+
+
+
+    underlayColor: require('ColorPropType'),
+
+
+
+
+    style: require('ViewPropTypes').style,
+
+
+
+    onShowUnderlay: require('prop-types').func,
+
+
+
+    onHideUnderlay: require('prop-types').func,
+
+
+
+
+
+    hasTVPreferredFocus: require('prop-types').bool,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    tvParallaxProperties: require('prop-types').object,
+
+
+
+    testOnly_pressed: require('prop-types').bool }),
+
+
+  mixins: [require('NativeMethodsMixin'), require('Touchable').Mixin],
+
+  getDefaultProps: function getDefaultProps() {return DEFAULT_PROPS;},
+
+  getInitialState: function getInitialState() {
+    this._isMounted = false;
+    if (this.props.testOnly_pressed) {
+      return _objectSpread({},
+      this.touchableGetInitialState(), {
+        extraChildStyle: {
+          opacity: this.props.activeOpacity },
+
+        extraUnderlayStyle: {
+          backgroundColor: this.props.underlayColor } });
+
+
+    } else {
+      return _objectSpread({},
+      this.touchableGetInitialState(), {
+        extraChildStyle: null,
+        extraUnderlayStyle: null });
+
+    }
+  },
+
+  componentDidMount: function componentDidMount() {
+    this._isMounted = true;
+    require('ensurePositiveDelayProps')(this.props);
+  },
+
+  componentWillUnmount: function componentWillUnmount() {
+    this._isMounted = false;
+    clearTimeout(this._hideTimeout);
+  },
+
+  UNSAFE_componentWillReceiveProps: function UNSAFE_componentWillReceiveProps(nextProps) {
+    require('ensurePositiveDelayProps')(nextProps);
+  },
+
+  viewConfig: {
+    uiViewClassName: 'RCTView',
+    validAttributes: require('ReactNativeViewAttributes').RCTView },
+
+
+
+
+
+
+  touchableHandleActivePressIn: function touchableHandleActivePressIn(e) {
+    clearTimeout(this._hideTimeout);
+    this._hideTimeout = null;
+    this._showUnderlay();
+    this.props.onPressIn && this.props.onPressIn(e);
+  },
+
+  touchableHandleActivePressOut: function touchableHandleActivePressOut(e) {
+    if (!this._hideTimeout) {
+      this._hideUnderlay();
+    }
+    this.props.onPressOut && this.props.onPressOut(e);
+  },
+
+  touchableHandlePress: function touchableHandlePress(e) {
+    clearTimeout(this._hideTimeout);
+    if (!require('Platform').isTV) {
+      this._showUnderlay();
+      this._hideTimeout = setTimeout(
+      this._hideUnderlay,
+      this.props.delayPressOut);
+
+    }
+    this.props.onPress && this.props.onPress(e);
+  },
+
+  touchableHandleLongPress: function touchableHandleLongPress(e) {
+    this.props.onLongPress && this.props.onLongPress(e);
+  },
+
+  touchableGetPressRectOffset: function touchableGetPressRectOffset() {
+    return this.props.pressRetentionOffset || PRESS_RETENTION_OFFSET;
+  },
+
+  touchableGetHitSlop: function touchableGetHitSlop() {
+    return this.props.hitSlop;
+  },
+
+  touchableGetHighlightDelayMS: function touchableGetHighlightDelayMS() {
+    return this.props.delayPressIn;
+  },
+
+  touchableGetLongPressDelayMS: function touchableGetLongPressDelayMS() {
+    return this.props.delayLongPress;
+  },
+
+  touchableGetPressOutDelayMS: function touchableGetPressOutDelayMS() {
+    return this.props.delayPressOut;
+  },
+
+  _showUnderlay: function _showUnderlay() {
+    if (!this._isMounted || !this._hasPressHandler()) {
+      return;
+    }
+    this.setState({
+      extraChildStyle: {
+        opacity: this.props.activeOpacity },
+
+      extraUnderlayStyle: {
+        backgroundColor: this.props.underlayColor } });
+
+
+    this.props.onShowUnderlay && this.props.onShowUnderlay();
+  },
+
+  _hideUnderlay: function _hideUnderlay() {
+    clearTimeout(this._hideTimeout);
+    this._hideTimeout = null;
+    if (this.props.testOnly_pressed) {
+      return;
+    }
+    if (this._hasPressHandler()) {
+      this.setState({
+        extraChildStyle: null,
+        extraUnderlayStyle: null });
+
+      this.props.onHideUnderlay && this.props.onHideUnderlay();
+    }
+  },
+
+  _hasPressHandler: function _hasPressHandler() {
+    return !!(
+    this.props.onPress ||
+    this.props.onPressIn ||
+    this.props.onPressOut ||
+    this.props.onLongPress);
+
+  },
+
+  render: function render() {
+    var child = require('React').Children.only(this.props.children);
+    return (
+      require('React').createElement(require('View'), {
+        accessible: this.props.accessible !== false,
+        accessibilityLabel: this.props.accessibilityLabel,
+        accessibilityHint: this.props.accessibilityHint,
+        accessibilityRole: this.props.accessibilityRole,
+        accessibilityStates: this.props.accessibilityStates,
+        style: require('StyleSheet').compose(
+        this.props.style,
+        this.state.extraUnderlayStyle),
+
+        onLayout: this.props.onLayout,
+        hitSlop: this.props.hitSlop,
+        isTVSelectable: true,
+        tvParallaxProperties: this.props.tvParallaxProperties,
+        hasTVPreferredFocus: this.props.hasTVPreferredFocus,
+        onStartShouldSetResponder: this.touchableHandleStartShouldSetResponder,
+        onResponderTerminationRequest:
+        this.touchableHandleResponderTerminationRequest,
+
+        onResponderGrant: this.touchableHandleResponderGrant,
+        onResponderMove: this.touchableHandleResponderMove,
+        onResponderRelease: this.touchableHandleResponderRelease,
+        onResponderTerminate: this.touchableHandleResponderTerminate,
+        nativeID: this.props.nativeID,
+        testID: this.props.testID, __source: { fileName: _jsxFileName, lineNumber: 348 } },
+      require('React').cloneElement(child, {
+        style: require('StyleSheet').compose(
+        child.props.style,
+        this.state.extraChildStyle) }),
+
+
+      require('Touchable').renderDebugView({
+        color: 'green',
+        hitSlop: this.props.hitSlop })));
+
+
+
+  } });
+
+
+module.exports = TouchableHighlight;

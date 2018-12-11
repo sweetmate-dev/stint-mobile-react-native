@@ -1,0 +1,14 @@
+64e856413f4f1bed8c7c7ff69ab6cb98
+
+
+'use strict';
+
+var ReactNative;
+
+if (__DEV__) {
+  ReactNative = require('ReactNativeRenderer-dev');
+} else {
+  ReactNative = require('ReactNativeRenderer-prod');
+}
+
+module.exports = ReactNative;

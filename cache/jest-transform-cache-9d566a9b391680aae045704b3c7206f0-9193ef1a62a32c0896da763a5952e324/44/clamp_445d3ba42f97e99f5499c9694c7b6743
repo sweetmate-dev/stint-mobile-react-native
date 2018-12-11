@@ -1,0 +1,16 @@
+f195177999a492d7b12a5e299ebc460b
+
+
+'use strict';
+
+function clamp(min, value, max) {
+  if (value < min) {
+    return min;
+  }
+  if (value > max) {
+    return max;
+  }
+  return value;
+}
+
+module.exports = clamp;

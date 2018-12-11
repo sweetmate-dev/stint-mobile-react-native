@@ -1,0 +1,54 @@
+534b8baf5062eea6e786268dd03a011f
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _ShorthandsNormalizerFactory = _interopRequireWildcard(require("./ShorthandsNormalizerFactory"));function _interopRequireWildcard(obj) {
+  if (obj && obj.__esModule) {
+    return obj;
+  } else {
+    var newObj = {};if (obj != null) {
+      for (var key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) {
+          var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {};if (desc.get || desc.set) {
+            Object.defineProperty(newObj, key, desc);
+          } else {
+            newObj[key] = obj[key];
+          }
+        }
+      }
+    }newObj.default = obj;return newObj;
+  }
+}function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);if (staticProps) _defineProperties(Constructor, staticProps);return Constructor;
+}var StyleNormalizer = function () {
+  function StyleNormalizer() {
+    _classCallCheck(this, StyleNormalizer);
+    this.normalizers = {};
+    this.createNormalizers('margin', [_ShorthandsNormalizerFactory.HORIZONTAL, _ShorthandsNormalizerFactory.VERTICAL, _ShorthandsNormalizerFactory.SIDES]);
+    this.createNormalizers('padding', [_ShorthandsNormalizerFactory.HORIZONTAL, _ShorthandsNormalizerFactory.VERTICAL, _ShorthandsNormalizerFactory.SIDES]);
+    this.createNormalizers('border', [_ShorthandsNormalizerFactory.SIDES], 'Width');
+  }_createClass(StyleNormalizer, [{ key: "createNormalizers", value: function createNormalizers(prop, shorthands) {
+      var _this = this;var suffix = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+      shorthands.forEach(function (shorthand) {
+        var propName = prop + shorthand.type + suffix;
+
+        if (_this.normalizerExists(propName)) {
+          throw Error("Normalizer for '" + propName + "' shorthand already exists");
+        }
+
+        _this.normalizers[propName] = _ShorthandsNormalizerFactory.default.createNormalizer(prop, shorthand, suffix);
+      });
+    } }, { key: "normalizerExists", value: function normalizerExists(normalizerName) {
+      return !!this.normalizers[normalizerName];
+    } }, { key: "canNormalize", value: function canNormalize(prop) {
+      return this.normalizerExists(prop);
+    } }, { key: "normalize", value: function normalize(prop, val) {
+      return this.normalizers[prop](val);
+    } }]);return StyleNormalizer;
+}();exports.default = StyleNormalizer;

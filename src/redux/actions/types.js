@@ -1,0 +1,29 @@
+export const WELCOME = 'WELCOME';
+export const SET_APP_STATE = 'SET_APP_STATE';
+
+// router
+export const SET_ROUTE_NAME = 'SET_ROUTE_NAME';
+export const SET_LOADING = 'SET_LOADING';
+
+// auth
+export const SET_USER_INFO = 'SET_USER_INFO';
+
+// sign up
+export const SET_SIGNUP_USER_UNIVERSITY = 'SET_SIGNUP_USER_UNIVERSITY';
+export const SET_SIGNUP_USER_EMAIL = 'SET_SIGNUP_USER_EMAIL';
+export const SET_SIGNUP_USER = 'SET_SIGNUP_USER'
+
+// post stint
+export const SET_POST_STINT_DATA = 'SET_POST_STINT_DATA'
+export const SET_POST_STINT_INFO = 'SET_POST_STINT_INFO'
+export const SET_PAYMENT_CARD = 'SET_PAYMENT_CARD'
+
+// complete profile
+export const UPDATE_COMPLETED_PROFILE_STATE = 'UPDATE_COMPLETED_PROFILE_STATE';
+
+// create a business
+export const UPDATE_COMPLETED_BUSINESS_STATE = 'UPDATE_COMPLETED_BUSINESS_STATE';
+export const SET_BUSINESS_COUNTRY_CODE = 'SET_BUSINESS_COUNTRY_CODE';
+
+// setting
+export const SET_TERMS_HTML = 'SET_TERMS_HTML';

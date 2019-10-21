@@ -67,10 +67,6 @@ class CompletePhotoScreen extends Component {
     };
   }
 
-  componentDidMount() {
-
-  }
-
   onPressSkip = () => {
     this.props.updateCompleteProfileState({ photo: true })
   }

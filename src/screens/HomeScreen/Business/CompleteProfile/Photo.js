@@ -16,7 +16,6 @@ import { bindActionCreators } from 'redux';
 import { ActionCreators } from '../../../../redux/actions';
 import NavigationService from '../../../../navigation/NavigationService';
 import ScreenHeader from '../../../../components/Navigation/ScreenHeader';
-import SearchInput from '../../../../components/Input/SearchInput';
 import ButtonWithIcon from '../../../../components/Button/ButtonWithIcon';
 import { dySize } from '../../../../utils/responsive';
 import theme from '../../../../theme';
@@ -123,7 +122,6 @@ class CompletePhotoScreen extends Component {
             onPress={this.onPressNext}
           />
         </View>
-        
       </View>
     );
   }
